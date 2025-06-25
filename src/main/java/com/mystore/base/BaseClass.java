@@ -73,7 +73,7 @@ public class BaseClass {
 		maximizeWindow();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICITLY_WAIT));
+	//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICITLY_WAIT));
 		
 		driver.get(prop.getProperty("url"));
 	//	driver.get("http://www.automationpractice.pl/index.php");
@@ -96,6 +96,7 @@ public class BaseClass {
 		
 		boolean flag = false;
 		try{
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", locator);
 			element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 			element.click();
 			
@@ -119,6 +120,7 @@ public class BaseClass {
 		
 			boolean flag = false;
 			try{
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			WebElement elementWait = wait.until(ExpectedConditions.visibilityOf(element));
 			elementWait.click();
 			
@@ -141,6 +143,7 @@ public class BaseClass {
 			
 				boolean flag = false;
 				try{
+					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 				WebElement elementWait = wait.until(ExpectedConditions.visibilityOf(element));
 				elementWait.click();
 				
@@ -160,7 +163,8 @@ public class BaseClass {
 	
 		//check is displayed
 	public boolean isDisplayed(WebElement element) {
-			boolean b = element.isDisplayed();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		boolean b = element.isDisplayed();
 			if(b) {
 				System.out.println(" Element is displayed ");
 			} else {
@@ -172,8 +176,9 @@ public class BaseClass {
 		//SendKeys method
 	public void enterText(WebElement element, String textToBeEntered) {
 		try {
-		WebElement tempEle = wait.until(ExpectedConditions.visibilityOf(element));
-		tempEle.sendKeys(textToBeEntered);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			WebElement tempEle = wait.until(ExpectedConditions.visibilityOf(element));
+			tempEle.sendKeys(textToBeEntered);
 		} catch (Exception e) {
 			System.err.println("Unable to enter text at element "+element);
 			throw e;	
@@ -183,6 +188,7 @@ public class BaseClass {
 	//clear text from textbox
 	public void textBoxClear(WebElement element) {
 		try {
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			WebElement tempEle = wait.until(ExpectedConditions.visibilityOf(element));
 			tempEle.clear();
 			} catch (Exception e) {
@@ -193,12 +199,14 @@ public class BaseClass {
 	
 	//to get text
 	public String getVisibleText(WebElement element) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		String txt = element.getText();
 		return txt;
 	}
 	
 	//to verify landing [age
 	public String verifyPage (WebElement element) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		WebElement tempEle = wait.until(ExpectedConditions.visibilityOf(element));
 		return tempEle.getText();
 	}
@@ -206,6 +214,7 @@ public class BaseClass {
 	//to click on radio button
 	public void clickOnRadioBtn(WebElement element) {
 		try{
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			WebElement tempEle=wait.until(ExpectedConditions.visibilityOf(element));
 			tempEle.click();
 				
@@ -217,6 +226,7 @@ public class BaseClass {
 	
 	//to select value from drop down
 	public void selectValueFromDropDown(WebElement element, String text) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		Select select = new Select(element);
 		try {
 			select.selectByVisibleText(text);
@@ -229,6 +239,7 @@ public class BaseClass {
 	
 	//js click
 	public void jsClick(WebElement element) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		WebElement tempEle=wait.until(ExpectedConditions.visibilityOf(element));
 		try {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -267,6 +278,7 @@ public class BaseClass {
 		String expectedMsg = msg;
 		String actualMsg="";
 		try {
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			WebElement tempEle = wait.until(ExpectedConditions.visibilityOf(element));
 			actualMsg = tempEle.getText();
 			Assert.assertEquals(actualMsg, expectedMsg);
