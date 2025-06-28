@@ -22,7 +22,7 @@ public class OrderSummaryPage extends BaseClass{
 	WebElement btnConfirmOrder;
 	
 	public OrderConfirmationPage clickOnConfirmOrder() throws Throwable {
-		clickOn(btnConfirmOrder);
+		jsClick(btnConfirmOrder);
 		return new OrderConfirmationPage();
 	}
 

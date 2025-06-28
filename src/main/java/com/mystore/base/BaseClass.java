@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -64,8 +65,8 @@ public class BaseClass {
 				driver = new FirefoxDriver();
 			}
 		} catch (Exception e) {
-			System.out.println("in exception of initialization");
-			//e.printStackTrace();
+			throw e;
+			
 		}
 		
 		//driver = new ChromeDriver();
@@ -96,7 +97,7 @@ public class BaseClass {
 		
 		boolean flag = false;
 		try{
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", locator);
+	//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", locator);
 			element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 			element.click();
 			
@@ -120,7 +121,7 @@ public class BaseClass {
 		
 			boolean flag = false;
 			try{
-				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			WebElement elementWait = wait.until(ExpectedConditions.visibilityOf(element));
 			elementWait.click();
 			
@@ -141,29 +142,21 @@ public class BaseClass {
 	//click on checkbox
 		public void clickOnCheckbox(WebElement element) {
 			
-				boolean flag = false;
-				try{
-					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			try {
+			  ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 				WebElement elementWait = wait.until(ExpectedConditions.visibilityOf(element));
-				elementWait.click();
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click();", element);
 				
-				flag = true;
 				
 			} catch (Exception e) {
 					throw e;
-			} finally {
-				if(flag) {
-					System.out.println("Click action performed on element - "+ element);
-				} else {
-					System.err.println("unable to perform click action on element - "+ element);
-				}
-
 			}
 		}
 	
 		//check is displayed
 	public boolean isDisplayed(WebElement element) {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	//	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		boolean b = element.isDisplayed();
 			if(b) {
 				System.out.println(" Element is displayed ");
@@ -176,7 +169,7 @@ public class BaseClass {
 		//SendKeys method
 	public void enterText(WebElement element, String textToBeEntered) {
 		try {
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			WebElement tempEle = wait.until(ExpectedConditions.visibilityOf(element));
 			tempEle.sendKeys(textToBeEntered);
 		} catch (Exception e) {
@@ -188,7 +181,7 @@ public class BaseClass {
 	//clear text from textbox
 	public void textBoxClear(WebElement element) {
 		try {
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		//	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			WebElement tempEle = wait.until(ExpectedConditions.visibilityOf(element));
 			tempEle.clear();
 			} catch (Exception e) {
@@ -199,14 +192,15 @@ public class BaseClass {
 	
 	//to get text
 	public String getVisibleText(WebElement element) {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		String txt = element.getText();
+	//	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		WebElement tempEle = wait.until(ExpectedConditions.visibilityOf(element));
+		String txt = tempEle.getText();
 		return txt;
 	}
 	
-	//to verify landing [age
+	//to verify landing page
 	public String verifyPage (WebElement element) {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	//	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		WebElement tempEle = wait.until(ExpectedConditions.visibilityOf(element));
 		return tempEle.getText();
 	}
@@ -214,7 +208,7 @@ public class BaseClass {
 	//to click on radio button
 	public void clickOnRadioBtn(WebElement element) {
 		try{
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			WebElement tempEle=wait.until(ExpectedConditions.visibilityOf(element));
 			tempEle.click();
 				
@@ -226,20 +220,31 @@ public class BaseClass {
 	
 	//to select value from drop down
 	public void selectValueFromDropDown(WebElement element, String text) {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	//	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		element.click();
+		text=text.trim();
 		Select select = new Select(element);
-		try {
-			select.selectByVisibleText(text);
+/*		try {
+			select.selectByContainsVisibleText(text);
 		} catch (Exception e) {
 			System.err.println("unable to select value - "+ text + " from dropdown - "+ element);
 			throw e;
 		}
-		
+*/
+		List<WebElement> options = select.getOptions();
+		for(WebElement option: options) {
+			String clearText = option.getText().replace("\u00A0", "").trim();
+			if(clearText.equals(text))
+			{
+				option.click();
+				break;
+			}
+		}
 	}
 	
 	//js click
 	public void jsClick(WebElement element) {
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		WebElement tempEle=wait.until(ExpectedConditions.visibilityOf(element));
 		try {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -249,38 +254,23 @@ public class BaseClass {
 		}
 	}
 	
-	//Check cart value
-	
-	public double checkCartTotalATCPg(String prodPrice, WebElement valueQuantity, WebElement valueSubTotal, WebElement valueTotalShipping, WebElement valueTotal) {
-		String productPrice= prodPrice.replace("$", "").trim();
-		String quantity = valueQuantity.getText().trim();
-		String subTotal = valueSubTotal.getText().trim();
-		subTotal=subTotal.replace("$", "");
-		String totalShipping = valueTotalShipping.getText().trim();
-		totalShipping=totalShipping.replace("$", "");
-		String actualTotal = valueTotal.getText().trim();
-		actualTotal=actualTotal.replace("$","");
-		double expectedTotal = ((Double.parseDouble(quantity))*(Double.parseDouble(productPrice)))+(Double.parseDouble(totalShipping));
-		Assert.assertEquals(actualTotal, expectedTotal);
-		return (Double.parseDouble(actualTotal));
-	}
-		
-	//check price 
-	public void verifyPrice(double price, WebElement element) {
-		String actualTotal = element.getText().trim();
-		actualTotal=actualTotal.replace("$", "");
-		Assert.assertEquals(Double.parseDouble(actualTotal), price);
-		
+	//js getText
+	public String jsGetText(WebElement element) {
+		WebElement tempEle=wait.until(ExpectedConditions.visibilityOf(element));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String text = (String) js.executeScript("return arguments[0].innerText;", element);
+		return text;
 	}
 	
-	//
+
+	//verify text
 	public void verifyText(WebElement element, String msg) {
 		String expectedMsg = msg;
 		String actualMsg="";
 		try {
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		//	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			WebElement tempEle = wait.until(ExpectedConditions.visibilityOf(element));
-			actualMsg = tempEle.getText();
+			actualMsg = tempEle.getText().trim();
 			Assert.assertEquals(actualMsg, expectedMsg);
 		} catch (Exception e) {
 			System.err.println("Acutal message - \"" + actualMsg + "\" is not equal to expected message - \""+ expectedMsg +"\".");

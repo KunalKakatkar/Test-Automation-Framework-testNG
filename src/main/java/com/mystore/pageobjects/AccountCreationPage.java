@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.mystore.base.BaseClass;
 
@@ -53,7 +54,7 @@ public class AccountCreationPage  extends BaseClass {
 	
 		
 	public HomePage createNewAccount(String gender, String firstName, String lastName, String password, String day, String month, String year) {
-		String pageValue = verifyPage(chkAccountCreationPage);
+		verifyText(chkAccountCreationPage, "CREATE AN ACCOUNT");
 		if(gender.equalsIgnoreCase("mr")) {
 			clickOnRadioBtn(radioMR);
 		} else if (gender.equalsIgnoreCase("mrs")) {

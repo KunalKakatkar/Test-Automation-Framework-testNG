@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.mystore.base.BaseClass;
 
@@ -19,23 +20,13 @@ public class AddToCartPage extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(id = "quantity_wanted")
-	WebElement txtQuantity;
-	
-	@FindBy(id = "group_1")
-	WebElement drpdwnSize;
 	
 	@FindBy(xpath = "//button[@name='Submit']")
 	WebElement btnAddToCart;
 	
-	@FindBy(xpath = "availability_value")
-	WebElement chkStock;
-	
 	@FindBy(xpath = "//div[@class='layer_cart_product col-xs-12 col-md-6']//h2")
 	WebElement msgSuccessadded;
 	
-	@FindBy(id = "our_price_display")
-	WebElement productPriceDisplayed;
 	
 	@FindBy(id="layer_cart_product_quantity")
 	WebElement valueQuantity;
@@ -43,45 +34,52 @@ public class AddToCartPage extends BaseClass {
 	@FindBy(id="layer_cart_product_price")
 	WebElement valueSubTotal;
 	
-	@FindBy(xpath="//span[@class='ajax_cart_shipping_cost']")
+	@FindBy(xpath="//strong[contains(normalize-space(.),'Total shipping')]/following-sibling::span")
 	WebElement valueTotalShipping;
 	
-	@FindBy(id="//span[@class='ajax_block_cart_total']")
+	@FindBy(xpath="//div[@class='layer_cart_row']/strong[normalize-space(text()) ='Total']/following-sibling::span")
 	WebElement valueTotal;
 	
 	@FindBy(xpath="//span[contains(normalize-space(.) ,'Proceed to checkout')]")
 	WebElement btnProceedToCheckOut;
 	
+	SearchResultPage sp = new SearchResultPage();
+	String productPrice = sp.getProductPrice();
 	
-	public String productPrice="";
-	private double Total=0.0;
-	private double shippingCost=0.0;
+	private static double Total;
+	private static double cartTotal;
+	private static double shippingCost;
+	private static double actualTotalPrice;
+	private static double expectedTotalPrice;
 	
-	public void selectQuantity(String quantity) {
-		textBoxClear(txtQuantity);
-		enterText(txtQuantity, quantity);
-	}
+	public String quantity;
+	public String subTotal;
+	public String totalShipping;
+	public String total;
+	public double subTotalDouble;
 	
-	public void selectSize(String size) {
-		selectValueFromDropDown(drpdwnSize,size);
-	}
-	
-	public String checkStock() {
-		String stock = getVisibleText(chkStock);
-		productPrice = getVisibleText(productPriceDisplayed);
-		clickOn(btnAddToCart);
-		return stock;
-	}
 	
 	public String validateAddToCartSuccessMsg() throws Throwable {
-		String msg = getVisibleText(msgSuccessadded);
-		return msg;
-	}
+		String msg = jsGetText(msgSuccessadded);
+		return msg.trim();
+		}
 	
 	public void checkCartValue() throws Throwable {
-		this.Total = checkCartTotalATCPg(productPrice, valueQuantity,valueSubTotal,valueTotalShipping,valueTotal);
-		String shipping=valueTotalShipping.getText().replaceAll("$", "");
-		this.shippingCost=Double.parseDouble(shipping);
+		productPrice=productPrice.replace("$","").trim();
+		quantity = jsGetText(valueQuantity).replace("$", "").trim();
+		subTotal = jsGetText(valueSubTotal).replace("$", "").trim(); 
+		totalShipping = jsGetText(valueTotalShipping).replace("$", "").trim();
+		total = jsGetText(valueTotal).replace("$", "").trim();
+		System.out.println("quantity - " + quantity+ ",subTotal - " +subTotal+ ",totalShipping - "+ totalShipping+", total - " +total);
+		actualTotalPrice = Double.parseDouble(total);
+		expectedTotalPrice = (Double.parseDouble(productPrice)*Double.parseDouble(quantity)) + Double.parseDouble(totalShipping);
+		Assert.assertEquals(actualTotalPrice, expectedTotalPrice);
+		System.out.println( "actualTotalPrice" +actualTotalPrice);
+		System.out.println("expectedTotalPrice -" +expectedTotalPrice);
+		this.shippingCost=Double.parseDouble(totalShipping);
+		subTotalDouble=Double.parseDouble(subTotal);
+		this.cartTotal=subTotalDouble;
+		this.Total=actualTotalPrice;
 	}
 	
 	public OrderPage proceedToCheckOutOrderPage() throws Throwable {
@@ -92,6 +90,10 @@ public class AddToCartPage extends BaseClass {
 	//getter to pass Total value
 	public double getTotal() {
 		return this.Total;
+	}
+	
+	public double getCartSubTotal() {
+		return this.cartTotal;
 	}
 	
 	//getter to pass Total value

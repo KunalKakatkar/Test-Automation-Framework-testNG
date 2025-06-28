@@ -30,12 +30,43 @@ public class HomePage extends BaseClass {
 	@FindBy(xpath = "//a[@class='account']//span")
 	WebElement valueUser;
 	
+	@FindBy(xpath = "//p[@class='alert alert-success']")
+	WebElement msgAccountCreation;
+	
+	@FindBy(id = "search_query_top")
+	WebElement srchBx;
+	 
+	@FindBy(xpath ="//button[@name='submit_search']")
+	WebElement btnSearch;
+	
+	public String searchProductName;
+	
 	public String verifyUser() {
 		return getVisibleText(valueUser); 
 	}
 	
 	public boolean checkMyPersonalPageVisibility() {
 		return isDisplayed(pageMyPersonagInfo);
+	}
+	
+	public void verifyAccountCreationMsg() {
+	 verifyText(msgAccountCreation,"Your account has been created.");	
+	}
+	
+	public SearchResultPage searchMethod(String productName) throws Throwable {
+		searchProductName=productName;
+		enterText(srchBx, searchProductName);
+		clickOn(btnSearch);
+		return new SearchResultPage();
+	}
+	
+	public String getSearchProductName() {
+		return searchProductName;
+	}
+	
+	public FirstAddressPage firstAddress() {
+		clickOn(pageAddMyFirstAddress);
+		return new FirstAddressPage();
 	}
 	
 	
