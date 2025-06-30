@@ -18,27 +18,21 @@ public class IndexPageTest extends BaseClass {
 	IndexPage indexPage ;
 	
 
-	@BeforeMethod
-	public void setup() {
-		initialization();
-	}
-	
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
-	
 	@Test
 	public void verifyLogo() throws Throwable {
-		indexPage = new IndexPage();
+		logger.info("**** Starting verifyLogo test ****");
+		indexPage = new IndexPage(getDriver());
 		boolean result = indexPage.validateLogo();
 		Assert.assertTrue(result);
+		logger.info("**** Completed verifyLogo test ****");
 	}
 	
 	@Test
 	public void verifyTitle() throws Throwable {
+		logger.info("**** Starting verifyTitle test ****");
 		String actualTitle = indexPage.getMyShopTitle();
 		Assert.assertEquals(actualTitle, expectedIndexPageTitle);
+		logger.info("**** Completed verifyTitle test ****");
 	
 	}
 

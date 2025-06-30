@@ -14,8 +14,8 @@ public class OrderSummaryPage extends BaseClass{
 		// TODO Auto-generated constructor stub
 	}
 */	
-	public OrderSummaryPage() {
-		PageFactory.initElements(driver, this);
+	public OrderSummaryPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	@FindBy(xpath = "//span[contains(normalize-space(.),'I confirm my order')]")
@@ -23,7 +23,7 @@ public class OrderSummaryPage extends BaseClass{
 	
 	public OrderConfirmationPage clickOnConfirmOrder() throws Throwable {
 		jsClick(btnConfirmOrder);
-		return new OrderConfirmationPage();
+		return new OrderConfirmationPage(getDriver());
 	}
 
 	

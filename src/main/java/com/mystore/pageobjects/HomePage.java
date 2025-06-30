@@ -17,8 +17,8 @@ public class HomePage extends BaseClass {
 		// TODO Auto-generated constructor stub
 	}
 */ 
-	public HomePage() {
-		PageFactory.initElements(driver, this);
+	public HomePage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	@FindBy(xpath = "//span[contains(text(),'My personal information')]")
@@ -49,15 +49,16 @@ public class HomePage extends BaseClass {
 		return isDisplayed(pageMyPersonagInfo);
 	}
 	
-	public void verifyAccountCreationMsg() {
+	public HomePage verifyAccountCreationMsg() {
 	 verifyText(msgAccountCreation,"Your account has been created.");	
+	 return this;
 	}
 	
 	public SearchResultPage searchMethod(String productName) throws Throwable {
 		searchProductName=productName;
 		enterText(srchBx, searchProductName);
 		clickOn(btnSearch);
-		return new SearchResultPage();
+		return new SearchResultPage(getDriver());
 	}
 	
 	public String getSearchProductName() {
@@ -66,7 +67,7 @@ public class HomePage extends BaseClass {
 	
 	public FirstAddressPage firstAddress() {
 		clickOn(pageAddMyFirstAddress);
-		return new FirstAddressPage();
+		return new FirstAddressPage(getDriver());
 	}
 	
 	

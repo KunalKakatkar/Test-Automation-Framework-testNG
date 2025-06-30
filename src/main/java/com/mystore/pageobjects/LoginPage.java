@@ -14,8 +14,8 @@ public class LoginPage extends BaseClass {
 		super(driver);
 	}
 */	
-	public LoginPage() {
-		PageFactory.initElements(driver, this);
+	public LoginPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	@FindBy(id = "email")
@@ -42,22 +42,22 @@ public class LoginPage extends BaseClass {
 		enterText(txtUsername,username);
 		enterText(txtPassword,password);
 		clickOn(btnLogin);
-		return new HomePage();	
+		return new HomePage(getDriver());	
 	}
 	
-	//proceeds to addesss page
+	//proceeds to address page
 	public AddressPage loginWithValidCredsThenAddress(String username, String password) throws Throwable {
 		enterText(txtUsername,username);
 		enterText(txtPassword,password);
 		clickOn(btnLogin);
-		return new AddressPage();	
+		return new AddressPage(getDriver());	
 	}
 	
 	public LoginPage loginWithInvalidCreds(String username, String password) throws Throwable {
 		enterText(txtUsername,username);
 		enterText(txtPassword,password);
 		clickOn(btnLogin);
-		return new LoginPage();
+		return new LoginPage(getDriver());
 	}
 	
 	public String getErrorLoginMSG() {
@@ -67,7 +67,7 @@ public class LoginPage extends BaseClass {
 	public AccountCreationPage createNewAccount(String email) throws Throwable {
 		enterText(txtEmailCreate, email);
 		clickOn(btnSubmitCreate);
-		return new AccountCreationPage();
+		return new AccountCreationPage(getDriver());
 	}
 	
 }

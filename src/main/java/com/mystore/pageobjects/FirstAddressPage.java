@@ -1,5 +1,6 @@
 package com.mystore.pageobjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,8 +9,8 @@ import com.mystore.base.BaseClass;
 
 public class FirstAddressPage extends BaseClass {
 
-	public FirstAddressPage() {
-		PageFactory.initElements(driver, this);
+	public FirstAddressPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	@FindBy(id="company")
@@ -45,7 +46,7 @@ public class FirstAddressPage extends BaseClass {
 	@FindBy(id="submitAddress")
 	WebElement btnSave;
 	
-	public void firstAddressDetails(String company, String addressLn1, String addressLn2, String city, String state, String postalCode, String homePhoneNumber, String mobileNumber, String additionalInfo, String addressAlias) {
+	public FirstAddressPage firstAddressDetails(String company, String addressLn1, String addressLn2, String city, String state, String postalCode, String homePhoneNumber, String mobileNumber, String additionalInfo, String addressAlias) {
 		enterText(txtCompany, company);
 		enterText(textAddress1,addressLn1);
 		enterText(textAddress2,addressLn2);
@@ -58,5 +59,6 @@ public class FirstAddressPage extends BaseClass {
 		textBoxClear(txtAias);
 		enterText(txtAias,addressAlias);
 		clickOn(btnSave);
+		return this;
 	}
 }

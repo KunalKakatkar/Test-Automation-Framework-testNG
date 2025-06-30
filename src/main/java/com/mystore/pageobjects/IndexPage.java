@@ -14,8 +14,8 @@ public class IndexPage extends BaseClass {
 		super(driver);
 	}
 */
-	public IndexPage() {
-		PageFactory.initElements(driver, this);
+	public IndexPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	@FindBy(xpath = "//a[contains(text(),'Sign in')]")
@@ -33,7 +33,7 @@ public class IndexPage extends BaseClass {
 	
 	public LoginPage clickOnSignInButton() throws Throwable {
 		clickOn(btnSignIn);
-		return new LoginPage();
+		return new LoginPage(getDriver());
 	}
 	
 	public boolean validateLogo() throws Throwable {
@@ -42,14 +42,14 @@ public class IndexPage extends BaseClass {
 	}
 	
 	public String getMyShopTitle() throws Throwable {
-		String myShopHomeTitle = driver.getTitle();
+		String myShopHomeTitle = getDriver().getTitle();
 		return myShopHomeTitle;
 	}
 	
 	public SearchResultPage searchMethod(String productName) throws Throwable {
 		enterText(srchBx, productName);
 		clickOn(btnSearch);
-		return new SearchResultPage();
+		return new SearchResultPage(getDriver());
 	}
 	
 	

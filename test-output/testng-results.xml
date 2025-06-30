@@ -2,28 +2,65 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-28T21:35:30 IST" name="Default suite" finished-at="2025-06-28T21:36:03 IST" duration-ms="32475">
+  <suite started-at="2025-06-30T13:30:53 IST" name="Default suite" finished-at="2025-06-30T13:31:19 IST" duration-ms="25950">
     <groups>
     </groups>
-    <test started-at="2025-06-28T21:35:30 IST" name="Default test" finished-at="2025-06-28T21:36:03 IST" duration-ms="32475">
-      <class name="com.mystore.testcases.PaymentTest">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.mystore.testcases.PaymentTest@17a7f733]" started-at="2025-06-28T21:35:30 IST" name="loadConfig" finished-at="2025-06-28T21:35:30 IST" duration-ms="12" status="PASS">
+    <test started-at="2025-06-30T13:30:53 IST" name="Default test" finished-at="2025-06-30T13:31:19 IST" duration-ms="25950">
+      <class name="com.mystore.testcases.AccountCreationTest">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.mystore.testcases.AccountCreationTest@70ab2d48]" started-at="2025-06-30T13:30:53 IST" name="loadConfig" finished-at="2025-06-30T13:30:53 IST" duration-ms="30" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.mystore.testcases.PaymentTest@17a7f733]" started-at="2025-06-28T21:35:30 IST" name="setup" finished-at="2025-06-28T21:35:43 IST" duration-ms="12286" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mystore.testcases.AccountCreationTest@70ab2d48]" started-at="2025-06-30T13:30:53 IST" name="setup" finished-at="2025-06-30T13:31:04 IST" duration-ms="10787" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="paymentTest()[pri:0, instance:com.mystore.testcases.PaymentTest@17a7f733]" started-at="2025-06-28T21:35:43 IST" name="paymentTest" finished-at="2025-06-28T21:36:02 IST" duration-ms="19831" status="PASS">
+        <test-method signature="accountCreation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.mystore.testcases.AccountCreationTest@70ab2d48]" started-at="2025-06-30T13:31:04 IST" name="accountCreation" data-provider="accountCreationData" finished-at="2025-06-30T13:31:18 IST" duration-ms="14015" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mr]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Steve]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Smith]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[testNG@1666]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[23]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[June]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[1999]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- paymentTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.mystore.testcases.PaymentTest@17a7f733]" started-at="2025-06-28T21:36:02 IST" name="tearDown" finished-at="2025-06-28T21:36:03 IST" duration-ms="299" status="PASS">
+        </test-method> <!-- accountCreation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.mystore.testcases.AccountCreationTest@70ab2d48]" started-at="2025-06-30T13:31:18 IST" name="tearDown" finished-at="2025-06-30T13:31:19 IST" duration-ms="1059" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.mystore.testcases.PaymentTest -->
+      </class> <!-- com.mystore.testcases.AccountCreationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

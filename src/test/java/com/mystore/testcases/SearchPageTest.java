@@ -1,5 +1,6 @@
 package com.mystore.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -13,39 +14,19 @@ import com.mystore.pageobjects.SearchResultPage;
 
 public class SearchPageTest extends BaseClass {
 
-	IndexPage indexPage;
 	LoginPage loginPage;
 	HomePage homePage;
 	SearchResultPage searchResultPage;
 	AddToCartPage addToCartPage;
 	
-	public String searchProductValue;
-	
-	
-	@BeforeMethod
-	public void setup() {
-		initialization();
-	}
-	
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
-	
+	public String searchItem = "Printed Chiffon Dress";
+
 	@Test
 	public void searchProducts() throws Throwable {
-		indexPage = new IndexPage();
-		// clickOnSignInButton method returns LoginPage, so we have created an loginPpage object & store it
-		loginPage=indexPage.clickOnSignInButton(); 
-		// loginWithValidCreds method returns HomePage, so we have created an HomePage object & store it
-		homePage=loginPage.loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password"));
-		searchResultPage=homePage.searchMethod("Printed Chiffon Dress");
-		this.searchProductValue = homePage.getSearchProductName();
-		searchResultPage.verifySearchResultandClick(searchProductValue);
-		searchResultPage.selectSize("L");
-		searchResultPage.selectQuantity("2");
-		searchResultPage.checkStock();
-		addToCartPage=searchResultPage.addToCart();
+		logger.info("**** Starting searchProducts test ****");
+		addToCartPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).searchMethod(searchItem).verifySearchResultandClick(searchItem)
+					  .selectSize("L").selectQuantity("2").selectQuantity("2").checkStock().addToCart();
+		logger.info("**** Completed searchProducts test ****");
 	}
 	
 }

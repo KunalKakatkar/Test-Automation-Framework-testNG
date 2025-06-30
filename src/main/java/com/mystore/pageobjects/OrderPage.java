@@ -16,12 +16,12 @@ public class OrderPage extends BaseClass {
 	}
 */	
 	
-	public OrderPage() {
-		PageFactory.initElements(driver, this);
+	public OrderPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	//object to get total value
-	AddToCartPage acp = new AddToCartPage();
+	AddToCartPage acp = new AddToCartPage(getDriver());
 	double total =acp.getTotal();
 	double shippingCost = acp.getShippingCost();
 	double subTotal = acp.getCartSubTotal();
@@ -38,28 +38,28 @@ public class OrderPage extends BaseClass {
 	@FindBy(xpath = "//a[@class='button btn btn-default standard-checkout button-medium']")
 	WebElement btnProceedToCheckOutCKPG;
 	
-	public void checkTotalOrderPg() throws Throwable {
+	public OrderPage checkTotalOrderPg() throws Throwable {
 		Double totalPrice = Double.parseDouble(getVisibleText(valTotalPrice).replace("$",""));
 		Double totalShipping = Double.parseDouble(getVisibleText(valTotalShippingPrice).replace("$","").trim());
 		Double grandTotal = Double.parseDouble(getVisibleText(valGrandTotal).replace("$","").trim());
 		double totalCartValue = totalPrice+totalShipping;
-		System.out.println(subTotal +"ln46");
 		Assert.assertEquals(totalPrice,subTotal);
 		Assert.assertEquals(totalShipping,shippingCost);
 		Assert.assertEquals(grandTotal, total);
 		Assert.assertEquals(grandTotal,totalCartValue);
+		return this;
 	}
 	
 	//proceeds directly to address page if user is already logged in
 	public AddressPage proceedToCheckOutAddressPage() throws Throwable {
 		clickOn(btnProceedToCheckOutCKPG);
-		return new AddressPage();
+		return new AddressPage(getDriver());
 	}
 	
 	//proceeds to login page if user has not logged in 
 	public LoginPage proceedToCheckOutLoginPage() throws Throwable {
 		clickOn(btnProceedToCheckOutCKPG);
-		return new LoginPage();
+		return new LoginPage(getDriver());
 	}
 		
 

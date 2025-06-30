@@ -1,0 +1,37 @@
+2025-06-30 13:30:53 [main] INFO com.mystore.testcases.AccountCreationTest Reading config properties
+2025-06-30 13:30:53 [main] INFO com.mystore.testcases.AccountCreationTest Completed reading config properties
+2025-06-30 13:30:53 [main] INFO com.mystore.testcases.AccountCreationTest Initializing browser
+2025-06-30 13:30:56 [main] INFO com.mystore.testcases.AccountCreationTest Initialized browser with name - chrome
+2025-06-30 13:30:56 [main] INFO com.mystore.testcases.AccountCreationTest window maximized
+2025-06-30 13:31:04 [main] INFO com.mystore.testcases.AccountCreationTest Initializing completed
+2025-06-30 13:31:04 [main] INFO com.mystore.testcases.AccountCreationTest **** Starting accountCreation test ****
+2025-06-30 13:31:04 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-06-30 13:31:06 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-06-30 13:31:06 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - pulse.pass8334@gmail.com on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: email_create]
+2025-06-30 13:31:06 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - pulse.pass8334@gmail.com on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: email_create]
+2025-06-30 13:31:06 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: SubmitCreate]
+2025-06-30 13:31:06 [main] INFO com.mystore.pageobjects.LoginPage Click on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: SubmitCreate]
+2025-06-30 13:31:06 [main] INFO com.mystore.pageobjects.AccountCreationPage Verifying text on element - Proxy element for: DefaultElementLocator 'By.xpath: //h1[contains(text(),'Create an account')]'
+2025-06-30 13:31:07 [main] INFO com.mystore.pageobjects.AccountCreationPage Successfully verifed text on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> xpath: //h1[contains(text(),'Create an account')]]
+2025-06-30 13:31:07 [main] INFO com.mystore.pageobjects.AccountCreationPage Trying to click on Radio button - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> xpath: //label[contains(normalize-space(.),'Mr.')]]
+2025-06-30 13:31:08 [main] INFO com.mystore.pageobjects.AccountCreationPage Successfully clicked on Radio button - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> xpath: //label[contains(normalize-space(.),'Mr.')]]
+2025-06-30 13:31:08 [main] INFO com.mystore.pageobjects.AccountCreationPage trying to sendkeys, with text - Steve on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: customer_firstname]
+2025-06-30 13:31:08 [main] INFO com.mystore.pageobjects.AccountCreationPage successfully performed sendkeys, with text - Steve on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: customer_firstname]
+2025-06-30 13:31:08 [main] INFO com.mystore.pageobjects.AccountCreationPage trying to sendkeys, with text - Smith on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: customer_lastname]
+2025-06-30 13:31:08 [main] INFO com.mystore.pageobjects.AccountCreationPage successfully performed sendkeys, with text - Smith on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: customer_lastname]
+2025-06-30 13:31:08 [main] INFO com.mystore.pageobjects.AccountCreationPage trying to sendkeys, with text - testNG@1666 on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: passwd]
+2025-06-30 13:31:08 [main] INFO com.mystore.pageobjects.AccountCreationPage successfully performed sendkeys, with text - testNG@1666 on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: passwd]
+2025-06-30 13:31:08 [main] INFO com.mystore.pageobjects.AccountCreationPage Trying to select value - 23 from drop down -[[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: days]
+2025-06-30 13:31:08 [main] INFO com.mystore.pageobjects.AccountCreationPage  Clicked on dropdown - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: days]
+2025-06-30 13:31:09 [main] INFO com.mystore.pageobjects.AccountCreationPage selected value 23from drop down - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: days]
+2025-06-30 13:31:09 [main] INFO com.mystore.pageobjects.AccountCreationPage Trying to select value - June from drop down -[[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: months]
+2025-06-30 13:31:09 [main] INFO com.mystore.pageobjects.AccountCreationPage  Clicked on dropdown - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: months]
+2025-06-30 13:31:10 [main] INFO com.mystore.pageobjects.AccountCreationPage selected value Junefrom drop down - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: months]
+2025-06-30 13:31:10 [main] INFO com.mystore.pageobjects.AccountCreationPage Trying to select value - 1999 from drop down -[[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: years]
+2025-06-30 13:31:10 [main] INFO com.mystore.pageobjects.AccountCreationPage  Clicked on dropdown - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: years]
+2025-06-30 13:31:11 [main] INFO com.mystore.pageobjects.AccountCreationPage selected value 1999from drop down - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: years]
+2025-06-30 13:31:11 [main] INFO com.mystore.pageobjects.AccountCreationPage Trying to click on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> id: submitAccount]
+2025-06-30 13:31:18 [main] INFO com.mystore.pageobjects.AccountCreationPage Click on element - Proxy element for: DefaultElementLocator 'By.id: submitAccount'
+2025-06-30 13:31:18 [main] INFO com.mystore.pageobjects.HomePage Verifying text on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> xpath: //p[@class='alert alert-success']]
+2025-06-30 13:31:18 [main] INFO com.mystore.pageobjects.HomePage Successfully verifed text on element - [[ChromeDriver: chrome on windows (8fc48a804780e707296dcd292080102c)] -> xpath: //p[@class='alert alert-success']]
+2025-06-30 13:31:18 [main] INFO com.mystore.testcases.AccountCreationTest **** Completed verifyAddToCart test ****

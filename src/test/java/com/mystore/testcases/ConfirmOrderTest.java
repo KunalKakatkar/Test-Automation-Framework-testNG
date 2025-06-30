@@ -18,7 +18,6 @@ import com.mystore.pageobjects.ShippingPage;
 
 public class ConfirmOrderTest extends BaseClass {
 	
-	IndexPage indexPage;
 	LoginPage loginPage;
 	HomePage homePage;
 	SearchResultPage searchResultPage;
@@ -28,43 +27,20 @@ public class ConfirmOrderTest extends BaseClass {
 	ShippingPage shippingPage;
 	PaymentPage paymentPage;
 	
+	public String searchItem = "Printed Chiffon Dress";
 	public String searchProductValue;
 	public String expectedSuccessMsg = "Product successfully added to your shopping cart";
 	public String actualSuccessMsg;
 	
-	@BeforeMethod
-	public void setup() {
-		initialization();
-	}
-	
-/*	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
-*/	
 	@Test
 	public void confirmOrder() throws Throwable {
-		indexPage = new IndexPage();
-		// clickOnSignInButton method returns LoginPage, so we have created an loginPpage object & store it
-		loginPage=indexPage.clickOnSignInButton(); 
-		// loginWithValidCreds method returns HomePage, so we have created an HomePage object & store it
-		homePage=loginPage.loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password"));
-		searchResultPage=homePage.searchMethod("Printed Chiffon Dress");
-		this.searchProductValue = homePage.getSearchProductName();
-		searchResultPage.verifySearchResultandClick(searchProductValue);
-		searchResultPage.selectSize("L");
-		searchResultPage.selectQuantity("2");
-		searchResultPage.checkStock();
-		addToCartPage=searchResultPage.addToCart();
+		logger.info("**** Starting confirmOrder test ****");
+		addToCartPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).searchMethod(searchItem).verifySearchResultandClick(searchItem)
+				.selectSize("L").selectQuantity("2").selectQuantity("2").checkStock().addToCart();
 		actualSuccessMsg=addToCartPage.validateAddToCartSuccessMsg();
 		Assert.assertEquals(actualSuccessMsg, expectedSuccessMsg);
-		addToCartPage.checkCartValue();
-		orderPage=addToCartPage.proceedToCheckOutOrderPage();
-		orderPage.checkTotalOrderPg();
-		addressPage=orderPage.proceedToCheckOutAddressPage();
-		addressPage.selectAddress("home-address", "deliver to home address");
-		shippingPage=addressPage.clickOnProceedShipPage();
-		shippingPage.verifyShippingCost();
-		paymentPage=shippingPage.clikonProceedToPaymentPage();
+		paymentPage=addToCartPage.checkCartValue().proceedToCheckOutOrderPage().checkTotalOrderPg().proceedToCheckOutAddressPage().selectAddress("home-address", "deliver to home address")
+			  .clickOnProceedShipPage().verifyShippingCost().clikonProceedToPaymentPage();
+		logger.info("**** Completed confirmOrder test ****");
 	}
 }

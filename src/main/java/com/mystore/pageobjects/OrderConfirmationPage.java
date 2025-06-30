@@ -14,8 +14,8 @@ public class OrderConfirmationPage extends BaseClass {
 		super(driver);
 	}
 */	
-	public OrderConfirmationPage() {
-		PageFactory.initElements(driver, this);
+	public OrderConfirmationPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	//getting success message from test util class
@@ -25,8 +25,9 @@ public class OrderConfirmationPage extends BaseClass {
 	@FindBy(xpath = "//p[@class='alert alert-success']")
 	WebElement msgConfirmOrder;
 	
-	public void verifyOrderSuccessMsg() throws Throwable {
+	public OrderConfirmationPage verifyOrderSuccessMsg() throws Throwable {
 		verifyText(msgConfirmOrder,successMsg);
+		return this;
 	}
 	
 	

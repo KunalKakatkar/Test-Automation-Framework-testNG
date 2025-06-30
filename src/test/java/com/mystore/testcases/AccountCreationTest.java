@@ -2,6 +2,7 @@ package com.mystore.testcases;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.mystore.base.BaseClass;
@@ -13,34 +14,25 @@ import com.mystore.utility.TestUtil;
 
 public class AccountCreationTest extends BaseClass {
 	
-	IndexPage indexPage;
 	LoginPage loginPage;
 	AccountCreationPage accountCreationPage;
 	HomePage homePage;
 	TestUtil tu = new TestUtil();
 	
-	
 	long randomNumber = tu.getRandomNumber();
-	
 	String mailId = "pulse.pass"+randomNumber+"@gmail.com";
 	
-	@BeforeMethod
-	public void setup() {
-		initialization();
+	@Test(dataProvider="accountCreationData")
+	public void accountCreation(String gender,String name, String surName, String password, String day, String month, String year ) throws Throwable {
+		logger.info("**** Starting accountCreation test ****");
+		homePage=indexPage.clickOnSignInButton().createNewAccount(mailId).createNewAccount(gender, name, surName, password, day, month, year).verifyAccountCreationMsg(); 
+		logger.info("**** Completed verifyAddToCart test ****");
 	}
 	
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
+	@DataProvider(name="accountCreationData")
+		public Object[][] accountCreationData(){
+			Object [][] data = {{"mr", "Steve", "Smith", "testNG@1666", "23", "June", "1999"}}; 
+			return data;
+		}
 	
-	@Test
-	public void accountCreation() throws Throwable {
-		indexPage = new IndexPage();
-		// clickOnSignInButton method returns LoginPage, so we have created an loginPpage object & store it
-		loginPage=indexPage.clickOnSignInButton(); 
-		accountCreationPage=loginPage.createNewAccount(mailId);
-		homePage=accountCreationPage.createNewAccount("mr", "Steve", "Smith", "testNG@1666", "23", "June", "1999"); //error dd has spaces
-		homePage.verifyAccountCreationMsg();
-	}
 }

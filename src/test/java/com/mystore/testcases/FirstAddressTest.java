@@ -12,29 +12,16 @@ import com.mystore.pageobjects.LoginPage;
 
 public class FirstAddressTest extends BaseClass{
 	
-	IndexPage indexPage;
 	LoginPage loginPage;
 	HomePage homePage;
 	FirstAddressPage firstAddressPage;
 
-	@BeforeMethod
-	public void setup() {
-		initialization();
-	}
-	
-/*	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
-*/	
+
 	@Test
 	public void loginTest() throws Throwable {
-		indexPage = new IndexPage();
-		// clickOnSignInButton method returns LoginPage, so we have created an loginPpage object & store it
-		loginPage=indexPage.clickOnSignInButton(); 
-		// loginWithValidCreds method returns HomePage, so we have created an HomePage object & store it
-		homePage=loginPage.loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password"));
-		firstAddressPage=homePage.firstAddress();
-		firstAddressPage.firstAddressDetails("Airtel","Wakad", "PCMC", "Pune","New York","12345","9999999999","8888888888","India","home-address");
+		logger.info("**** Starting loginTest test ****");
+		firstAddressPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).firstAddress()
+				         .firstAddressDetails("Airtel","Wakad", "PCMC", "Pune","New York","12345","9999999999","8888888888","India","home-address");
+		logger.info("**** Completed loginTest test ****");
 	}
 }

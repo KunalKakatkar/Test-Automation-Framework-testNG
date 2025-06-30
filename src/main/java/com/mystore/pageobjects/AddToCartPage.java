@@ -16,8 +16,8 @@ public class AddToCartPage extends BaseClass {
 	}
 */	
 	
-	public AddToCartPage() {
-		PageFactory.initElements(driver, this);
+	public AddToCartPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	
@@ -43,7 +43,7 @@ public class AddToCartPage extends BaseClass {
 	@FindBy(xpath="//span[contains(normalize-space(.) ,'Proceed to checkout')]")
 	WebElement btnProceedToCheckOut;
 	
-	SearchResultPage sp = new SearchResultPage();
+	SearchResultPage sp = new SearchResultPage(getDriver());
 	String productPrice = sp.getProductPrice();
 	
 	private static double Total;
@@ -64,27 +64,28 @@ public class AddToCartPage extends BaseClass {
 		return msg.trim();
 		}
 	
-	public void checkCartValue() throws Throwable {
+	public AddToCartPage checkCartValue() throws Throwable {
 		productPrice=productPrice.replace("$","").trim();
 		quantity = jsGetText(valueQuantity).replace("$", "").trim();
 		subTotal = jsGetText(valueSubTotal).replace("$", "").trim(); 
 		totalShipping = jsGetText(valueTotalShipping).replace("$", "").trim();
 		total = jsGetText(valueTotal).replace("$", "").trim();
-		System.out.println("quantity - " + quantity+ ",subTotal - " +subTotal+ ",totalShipping - "+ totalShipping+", total - " +total);
+//		System.out.println("quantity - " + quantity+ ",subTotal - " +subTotal+ ",totalShipping - "+ totalShipping+", total - " +total);
 		actualTotalPrice = Double.parseDouble(total);
 		expectedTotalPrice = (Double.parseDouble(productPrice)*Double.parseDouble(quantity)) + Double.parseDouble(totalShipping);
 		Assert.assertEquals(actualTotalPrice, expectedTotalPrice);
-		System.out.println( "actualTotalPrice" +actualTotalPrice);
-		System.out.println("expectedTotalPrice -" +expectedTotalPrice);
+//		System.out.println( "actualTotalPrice" +actualTotalPrice);
+//		System.out.println("expectedTotalPrice -" +expectedTotalPrice);
 		this.shippingCost=Double.parseDouble(totalShipping);
 		subTotalDouble=Double.parseDouble(subTotal);
 		this.cartTotal=subTotalDouble;
 		this.Total=actualTotalPrice;
+		return this;
 	}
 	
 	public OrderPage proceedToCheckOutOrderPage() throws Throwable {
 		jsClick(btnProceedToCheckOut);
-		return new OrderPage();
+		return new OrderPage(getDriver());
 	}
 	
 	//getter to pass Total value

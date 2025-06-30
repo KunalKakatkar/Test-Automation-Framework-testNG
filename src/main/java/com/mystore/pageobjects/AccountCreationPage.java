@@ -14,8 +14,8 @@ public class AccountCreationPage  extends BaseClass {
 		super(driver);
 	}
 */
-	public AccountCreationPage() {
-		PageFactory.initElements(driver, this);
+	public AccountCreationPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 
 
@@ -67,7 +67,7 @@ public class AccountCreationPage  extends BaseClass {
 		selectValueFromDropDown(drpdwnMonths,month);
 		selectValueFromDropDown(drpdwnYears,year);
 		clickOn(btnSubmitAccount);
-		return new HomePage();
+		return new HomePage(getDriver());
 	}
 	
 }

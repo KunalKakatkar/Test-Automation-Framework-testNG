@@ -14,11 +14,11 @@ public class PaymentPage extends BaseClass {
 		super(driver);
 	}
 */
-	public PaymentPage() {
-		PageFactory.initElements(driver, this);
+	public PaymentPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 		
-	AddToCartPage ap=new AddToCartPage();
+	AddToCartPage ap=new AddToCartPage(getDriver());
 	double Total = ap.getTotal();
 	double shipTotal = ap.getShippingCost();
 	double cartTotal = ap.getCartSubTotal();
@@ -43,7 +43,7 @@ public class PaymentPage extends BaseClass {
 	double GrandTotal;
 
 	
-		public void verifyTotalCostPaymentPage() throws Throwable {
+		public PaymentPage verifyTotalCostPaymentPage() throws Throwable {
 			subTotal=Double.parseDouble(jsGetText(valueSubTotal).replace("$", "").trim()); 
 			totalShipping= Double.parseDouble(jsGetText(valueTotalShip).replace("$", "").trim());
 			GrandTotal = Double.parseDouble(jsGetText(valueTotalCost).replace("$", "").trim());
@@ -52,6 +52,7 @@ public class PaymentPage extends BaseClass {
 			 Assert.assertEquals(totalShipping, shipTotal);
 			 Assert.assertEquals(GrandTotal, subTotalPlusShipping);
 			 Assert.assertEquals(GrandTotal, Total);
+			 return this;
 		}
 	
 		public OrderSummaryPage selectPaymentType(String paymentType) throws Throwable {
@@ -66,7 +67,7 @@ public class PaymentPage extends BaseClass {
 				System.err.println("Please select correct payment mode");
 			}
 			
-			return new OrderSummaryPage();
+			return new OrderSummaryPage(getDriver());
 		}
 		
 		

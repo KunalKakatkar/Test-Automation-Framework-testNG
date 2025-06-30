@@ -13,27 +13,13 @@ import com.mystore.pageobjects.LoginPage;
 public class HomePageTest extends BaseClass{
 
 	HomePage homePage; 
-	IndexPage indexPage;
 	LoginPage loginPage;
-	
-	@BeforeMethod
-	public void setup() {
-		initialization();
-	}
-	
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
 	
 	@Test
 	public void myPersonalInfoPageTest() throws Throwable {
-		indexPage = new IndexPage();
-		// clickOnSignInButton method returns LoginPage, so we have created an loginPpage object & store it
-		loginPage=indexPage.clickOnSignInButton(); 
-		// loginWithValidCreds method returns HomePage, so we have created an HomePage object & store it
-		homePage=loginPage.loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password"));
-		boolean result = homePage.checkMyPersonalPageVisibility();
+		logger.info("**** Starting myPersonalInfoPageTest test ****");
+		boolean result=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).checkMyPersonalPageVisibility();
 		Assert.assertTrue(result);
+		logger.info("**** Completed myPersonalInfoPageTest test ****");
 	}
 }

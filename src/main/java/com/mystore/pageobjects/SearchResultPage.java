@@ -14,8 +14,8 @@ public class SearchResultPage extends BaseClass {
 		super(driver);
 	}
 */
-	public SearchResultPage() {
-		PageFactory.initElements(driver, this);
+	public SearchResultPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	@FindBy(xpath = "//a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']")
@@ -40,31 +40,35 @@ public class SearchResultPage extends BaseClass {
 	public static String productQuantity;
 	
 	
-	public void verifySearchResultandClick(String searchValue) {
+	public SearchResultPage verifySearchResultandClick(String searchValue) {
 		verifyText(valueSearchResult, searchValue);
 		clickOn(valueSearchResult);
 		//System.out.println("returning product price - "+productPrice);
+		return this;
 	}
 	
-	public void selectSize(String size) {
+	public SearchResultPage selectSize(String size) {
 		selectValueFromDropDown(drpdwnSize,size);
 		this.productPrice = getVisibleText(productPriceDisplayed);
+		return this;
 	}
 	
-	public void selectQuantity(String quantity) {
+	public SearchResultPage selectQuantity(String quantity) {
 		this.productQuantity=quantity;
 		textBoxClear(txtQuantity);
 		enterText(txtQuantity, productQuantity);
+		return this;
 	}
 	
-	public void checkStock() {
+	public SearchResultPage checkStock() {
 		String stock = getVisibleText(chkStock);
 		Assert.assertEquals(stock, "In stock");
+		return this;
 	}	
 	
 	public AddToCartPage addToCart() {
 		clickOn(btnAddtoCart);
-		return new AddToCartPage();
+		return new AddToCartPage(getDriver());
 	}
 	
 	public String getProductPrice() {
@@ -74,6 +78,7 @@ public class SearchResultPage extends BaseClass {
 	public String getProductQuantity() {
 		return this.productQuantity;
 	}
+
 
 	
 	

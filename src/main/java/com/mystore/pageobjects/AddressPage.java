@@ -14,8 +14,8 @@ public class AddressPage extends BaseClass {
 		// TODO Auto-generated constructor stub
 	}
 */ 
-	public AddressPage() {
-		PageFactory.initElements(driver, this);
+	public AddressPage(WebDriver driver) {
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	@FindBy(id = "id_address_delivery")
@@ -27,13 +27,14 @@ public class AddressPage extends BaseClass {
 	@FindBy(xpath="//button[@name='processAddress']/span")
 	WebElement btnProToChkOutShipPage;
 	
-	public void selectAddress(String address, String comments)  throws Throwable {
+	public AddressPage selectAddress(String address, String comments)  throws Throwable {
 		selectValueFromDropDown(drpdwnAddress, address);
 		enterText(txtCmtBx,comments);
+		return this;
 	}
 	
 	public ShippingPage clickOnProceedShipPage()  throws Throwable {
 		clickOn(btnProToChkOutShipPage);
-		return new ShippingPage();
+		return new ShippingPage(getDriver());
 	}
 }
