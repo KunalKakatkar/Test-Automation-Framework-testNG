@@ -1,0 +1,29 @@
+[
+	{
+	   "gender": "Mr",
+	   "name": "Shubham",
+	   "surName": "Koli",
+	   "password": "Pass123!",
+	   "day": "10",
+	   "month": "May",
+	   "year": "1990"
+	 },
+	 {
+	   "gender": "Mrs",
+	   "name": "Shrutika",
+	   "surName": "Patil",
+	   "password": "Secret@456",
+	   "day": "25",
+	   "month": "August",
+	   "year": "1985"
+	 },
+	 {
+	   "gender": "Mr",
+	   "name": "Parashram",
+	   "surName": "Patil",
+	   "password": "Welcome@123",
+	   "day": "5",
+	   "month": "January",
+	   "year": "1995"
+	 }
+ ]

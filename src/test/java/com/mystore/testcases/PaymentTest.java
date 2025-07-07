@@ -3,6 +3,7 @@ package com.mystore.testcases;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import com.mystore.base.BaseClass;
+import com.mystore.dataprovider.MyStoreDataProvider;
 import com.mystore.pageobjects.AddToCartPage;
 import com.mystore.pageobjects.AddressPage;
 import com.mystore.pageobjects.HomePage;
@@ -28,20 +29,22 @@ public class PaymentTest extends BaseClass {
 	OrderSummaryPage orderSummaryPage;
 	OrderConfirmationPage orderConfirmationPage;
 	
-	public String searchItem = "Printed Chiffon Dress";
 	public String searchProductValue;
 	public String expectedSuccessMsg = "Product successfully added to your shopping cart";
 	public String actualSuccessMsg;
 
+	//Note - Either uncomment line 39 or 40 before executing the test
 	@Test
-	public void paymentTest() throws Throwable {
+//	(dataProvider = "excelData", dataProviderClass = MyStoreDataProvider.class) // for Excel file
+//	(dataProvider = "csvData", dataProviderClass = MyStoreDataProvider.class)  // for CSV file
+	public void paymentTest(String searchItem, String size, String quantity, String typeOfPayment) throws Throwable {
 		logger.info("**** starting test - paymentTest ****");
 		addToCartPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).searchMethod(searchItem).verifySearchResultandClick(searchItem)
-								.selectSize("L").selectQuantity("2").selectQuantity("2").checkStock().addToCart();
+								.selectSize(size).selectQuantity(quantity).checkStock().addToCart();
 		actualSuccessMsg=addToCartPage.validateAddToCartSuccessMsg();
 		Assert.assertEquals(actualSuccessMsg, expectedSuccessMsg);
 		orderConfirmationPage=addToCartPage.checkCartValue().proceedToCheckOutOrderPage().checkTotalOrderPg().proceedToCheckOutAddressPage().selectAddress("home-address", "deliver to home address")
-							  .clickOnProceedShipPage().verifyShippingCost().clikonProceedToPaymentPage().verifyTotalCostPaymentPage().selectPaymentType("Pay by check")
+							  .clickOnProceedShipPage().verifyShippingCost().clikonProceedToPaymentPage().verifyTotalCostPaymentPage().selectPaymentType(typeOfPayment)
 							  .clickOnConfirmOrder().verifyOrderSuccessMsg();
 		logger.info("**** Completed test - paymentTest ****");
 	}
