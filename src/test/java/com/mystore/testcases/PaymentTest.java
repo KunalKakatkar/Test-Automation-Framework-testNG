@@ -35,8 +35,8 @@ public class PaymentTest extends BaseClass {
 
 	//Note - Either uncomment line 39 or 40 before executing the test
 	@Test
-//	(dataProvider = "excelData", dataProviderClass = MyStoreDataProvider.class) // for Excel file
-//	(dataProvider = "csvData", dataProviderClass = MyStoreDataProvider.class)  // for CSV file
+//	(groups = {"regression"}, dataProvider = "excelData", dataProviderClass = MyStoreDataProvider.class) // for Excel file
+	(groups = {"regression"}, dataProvider = "csvData", dataProviderClass = MyStoreDataProvider.class)  // for CSV file
 	public void paymentTest(String searchItem, String size, String quantity, String typeOfPayment) throws Throwable {
 		logger.info("**** starting test - paymentTest ****");
 		addToCartPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).searchMethod(searchItem).verifySearchResultandClick(searchItem)

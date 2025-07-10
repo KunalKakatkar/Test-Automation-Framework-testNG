@@ -18,7 +18,7 @@ public class IndexPageTest extends BaseClass {
 	IndexPage indexPage ;
 	
 
-	@Test
+	@Test(groups = {"sanity","regression"})
 	public void verifyLogo() throws Throwable {
 		logger.info("**** Starting verifyLogo test ****");
 		indexPage = new IndexPage(getDriver());
@@ -27,7 +27,7 @@ public class IndexPageTest extends BaseClass {
 		logger.info("**** Completed verifyLogo test ****");
 	}
 	
-	@Test
+	@Test(groups = {"sanity","regression"})
 	public void verifyTitle() throws Throwable {
 		logger.info("**** Starting verifyTitle test ****");
 		String actualTitle = indexPage.getMyShopTitle();

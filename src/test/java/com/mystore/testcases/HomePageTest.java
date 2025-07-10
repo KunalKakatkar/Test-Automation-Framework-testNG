@@ -15,7 +15,7 @@ public class HomePageTest extends BaseClass{
 	HomePage homePage; 
 	LoginPage loginPage;
 	
-	@Test
+	@Test (groups = {"sanity","regression"})
 	public void myPersonalInfoPageTest() throws Throwable {
 		logger.info("**** Starting myPersonalInfoPageTest test ****");
 		boolean result=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).checkMyPersonalPageVisibility();

@@ -21,7 +21,7 @@ public class SearchPageTest extends BaseClass {
 	
 	public String searchItem = "Printed Chiffon Dress";
 
-	@Test
+	@Test(groups = {"sanity","regression"})
 	public void searchProducts() throws Throwable {
 		logger.info("**** Starting searchProducts test ****");
 		addToCartPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).searchMethod(searchItem).verifySearchResultandClick(searchItem)

@@ -23,7 +23,7 @@ public class LoginTest extends BaseClass {
 	String actualProfileName="";
 	
 
-	@Test
+	@Test(groups = {"sanity","regression"})
 	public void loginTest() throws Throwable {
 		logger.info("**** Starting Login Test ****");
 		actualProfileName=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).verifyUser();

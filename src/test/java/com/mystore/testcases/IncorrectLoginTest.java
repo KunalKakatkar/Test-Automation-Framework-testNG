@@ -21,7 +21,7 @@ public class IncorrectLoginTest extends BaseClass {
 	
 
 	//providing data with dataProvider
-	@Test(dataProvider="incorrectLoginData",description = "Verify if the proper error message is shown for the user when they enter invalid credentials")
+	@Test(groups = {"regression"},dataProvider="incorrectLoginData",description = "Verify if the proper error message is shown for the user when they enter invalid credentials")
 	public void incorrectloginTest(String username, String password) throws Throwable {
 		logger.info("**** Starting incorrectloginTest test ****");
 		actualErrorMsg=indexPage.clickOnSignInButton().loginWithInvalidCreds(username, password).getErrorLoginMSG();

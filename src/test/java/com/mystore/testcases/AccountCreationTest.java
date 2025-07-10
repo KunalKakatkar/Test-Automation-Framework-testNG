@@ -25,7 +25,7 @@ public class AccountCreationTest extends BaseClass {
 	long randomNumber;
 	String mailId;
 	
-	@Test(dataProvider = "jsonData", dataProviderClass = MyStoreDataProvider.class)  // for JSON file
+	@Test(groups = {"regression"},dataProvider = "jsonData", dataProviderClass = MyStoreDataProvider.class)  // for JSON file
 	public void accountCreation(Map<String, String> data) throws Throwable {
 		logger.info("**** Starting accountCreation test ****");
 		randomNumber = tu.getRandomNumber();

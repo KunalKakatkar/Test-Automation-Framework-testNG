@@ -28,7 +28,7 @@ public class OrderPageTest extends BaseClass{
 	public String actualSuccessMsg;
 	
 
-	@Test
+	@Test(groups = {"regression"})
 	public void verifyOrderPage() throws Throwable {
 		logger.info("**** Starting verifyOrderPage test ****");
 		addToCartPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).searchMethod(searchItem).verifySearchResultandClick(searchItem)

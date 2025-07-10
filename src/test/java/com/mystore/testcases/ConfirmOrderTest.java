@@ -32,7 +32,7 @@ public class ConfirmOrderTest extends BaseClass {
 	public String expectedSuccessMsg = "Product successfully added to your shopping cart";
 	public String actualSuccessMsg;
 	
-	@Test
+	@Test(groups = {"regression"})
 	public void confirmOrder() throws Throwable {
 		logger.info("**** Starting confirmOrder test ****");
 		addToCartPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).searchMethod(searchItem).verifySearchResultandClick(searchItem)

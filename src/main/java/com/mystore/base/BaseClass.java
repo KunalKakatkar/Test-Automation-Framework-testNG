@@ -23,7 +23,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import com.mystore.pageobjects.IndexPage;
 import com.mystore.utility.TestUtil;
@@ -45,55 +48,77 @@ public class BaseClass {
 		return driver.get();
 	}
 	
-	//reading config file
-	@BeforeTest
-	public void loadConfig() {
-		logger.info("Reading config properties");
+		//reading config file when data (like report name, host etc) from config file is need in extent report
+		static {
+			try {
 		try {
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\Configuration\\config.properties");
-	//	System.out.println("driver " + driver);
 			prop.load(fis);
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}catch (IOException e) {
-			e.printStackTrace();
+			 throw new RuntimeException("Failed to load config.properties file");
 		}
-		logger.info("Completed reading config properties");
-	}
+	} catch (Exception e) {
+        e.printStackTrace();
+    }
+		}
+		
+		
+	
+		//reading config file when no data from config file is need in extent report
+/*		@BeforeSuite(alwaysRun = true, groups = {"sanity","regression"})
+		public  void loadConfig() {
+			logger.info("Reading config properties");
+			try {
+			prop = new Properties();
+			FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\Configuration\\config.properties");
+			System.out.println("driver " + driver);
+				prop.load(fis);
+			} catch(FileNotFoundException e) {
+				e.printStackTrace();
+			}catch (IOException e) {
+				 throw new RuntimeException("Failed to load config.properties file");
+			}
+			logger.info("Completed reading config properties");
+		}
+*/
+	
 	
 	@BeforeMethod(alwaysRun = true)
-	public void setup() {
-		initialization();
+	@Parameters("browserName")
+	public void setup(String browser) {
+		initialization(browser);
 		indexPage = new IndexPage(getDriver());
 	}
 	
-	@AfterMethod
-	public void tearDown() {
-		 if (getDriver() != null) {
-		        getDriver().quit();
+	@AfterMethod(alwaysRun = true,groups = {"sanity","regression"})
+	public void tearDown() {		 
+		 WebDriver localDriver = getDriver();
+		    if (localDriver != null) {
+		        localDriver.quit();     // Close the browser
+		        driver.remove();        // Remove the driver from ThreadLocal
+		        logger.info("Browser closed and driver removed");
+		    } else {
+		        logger.warn("Driver was null in tearDown()");
 		    }
 	}
 	
 	//launch URL
-	public void initialization() {
-		logger.info("Initializing browser");
-		
-		String browserName = prop.getProperty("browser");
+	public void initialization(String browser) {
+		logger.info("Initializing browser"); 
 		try {
-			if(browserName.equalsIgnoreCase("chrome")) {
+			if(browser.equalsIgnoreCase("chrome")) {
 				WebDriverManager.chromedriver().setup();
-				//driver = new ChromeDriver();
 				//Set Browser to ThreadLocalMap
 				driver.set(new ChromeDriver());
-			} else if (browserName.equalsIgnoreCase("edge")) {
+			} else if (browser.equalsIgnoreCase("edge")) {
 				WebDriverManager.edgedriver().setup();
-				//driver = new EdgeDriver();
 				//Set Browser to ThreadLocalMap
 				driver.set(new EdgeDriver());
-			} else if (browserName.equalsIgnoreCase("firefox")) {
+			} else if (browser.equalsIgnoreCase("firefox")) {
 				WebDriverManager.firefoxdriver().setup();
-				//driver = new FirefoxDriver();
 				//Set Browser to ThreadLocalMap
 				driver.set(new FirefoxDriver());
 			}
@@ -102,10 +127,7 @@ public class BaseClass {
 			
 		}
 		
-		logger.info("Initialized browser with name - " +browserName);
-		
-		//driver = new ChromeDriver();
-		//System.setProperty("Webdriver.Chrome.Driver", "D:\\Automation\\Selenium-PracticeProject\\Drivers\\chromedriver.exe");
+		logger.info("Initialized browser with name - " +browser);
 		maximizeWindow();
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
@@ -150,6 +172,7 @@ public class BaseClass {
 		}
 
 	}
+
 	
 	
 	//click on element by element	

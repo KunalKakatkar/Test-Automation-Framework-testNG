@@ -26,7 +26,7 @@ public class AddToCartTest extends BaseClass {
 	public String actualSuccessMsg;
 
 	
-	@Test
+	@Test(groups = {"regression"})
 	public void verifyAddToCart() throws Throwable {
 		logger.info("**** Starting verifyAddToCart test ****");
 		addToCartPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).searchMethod(searchItem).verifySearchResultandClick(searchItem)
