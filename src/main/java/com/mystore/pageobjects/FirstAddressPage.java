@@ -46,7 +46,7 @@ public class FirstAddressPage extends BaseClass {
 	@FindBy(id="submitAddress")
 	WebElement btnSave;
 	
-	public FirstAddressPage firstAddressDetails(String company, String addressLn1, String addressLn2, String city, String state, String postalCode, String homePhoneNumber, String mobileNumber, String additionalInfo, String addressAlias) {
+	public FirstAddressPage firstAddressDetails(String company, String addressLn1, String addressLn2, String city, String state, String postalCode, String homePhoneNumber, String mobileNumber, String additionalInfo, String addressAlias) throws Exception {
 		enterText(txtCompany, company);
 		enterText(textAddress1,addressLn1);
 		enterText(textAddress2,addressLn2);

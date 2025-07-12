@@ -1,90 +1,33 @@
-2025-07-10 19:59:33 [main] INFO com.mystore.testcases.LoginTest Initializing browser
-2025-07-10 19:59:36 [main] INFO com.mystore.testcases.LoginTest Initialized browser with name - edge
-2025-07-10 19:59:36 [main] INFO com.mystore.testcases.LoginTest window maximized
-2025-07-10 19:59:44 [main] INFO com.mystore.testcases.LoginTest Initializing completed
-2025-07-10 19:59:45 [main] INFO com.mystore.testcases.LoginTest **** Starting Login Test ****
-2025-07-10 19:59:45 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[EdgeDriver: MicrosoftEdge on windows (569699340fd9ed48e412c8c74c06c036)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-10 19:59:47 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[EdgeDriver: MicrosoftEdge on windows (569699340fd9ed48e412c8c74c06c036)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-10 19:59:47 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[EdgeDriver: MicrosoftEdge on windows (569699340fd9ed48e412c8c74c06c036)] -> id: email]
-2025-07-10 19:59:47 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[EdgeDriver: MicrosoftEdge on windows (569699340fd9ed48e412c8c74c06c036)] -> id: email]
-2025-07-10 19:59:47 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password on element - [[EdgeDriver: MicrosoftEdge on windows (569699340fd9ed48e412c8c74c06c036)] -> id: passwd]
-2025-07-10 19:59:48 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password on element - [[EdgeDriver: MicrosoftEdge on windows (569699340fd9ed48e412c8c74c06c036)] -> id: passwd]
-2025-07-10 19:59:48 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[EdgeDriver: MicrosoftEdge on windows (569699340fd9ed48e412c8c74c06c036)] -> id: SubmitLogin]
-2025-07-10 19:59:49 [main] INFO com.mystore.pageobjects.LoginPage Click on element - Proxy element for: DefaultElementLocator 'By.id: SubmitLogin'
-2025-07-10 19:59:49 [main] INFO com.mystore.pageobjects.HomePage trying to getText on element - [[EdgeDriver: MicrosoftEdge on windows (569699340fd9ed48e412c8c74c06c036)] -> xpath: //a[@class='account']//span]
-2025-07-10 19:59:49 [main] INFO com.mystore.pageobjects.HomePage returning getText on element - [[EdgeDriver: MicrosoftEdge on windows (569699340fd9ed48e412c8c74c06c036)] -> xpath: //a[@class='account']//span]
-2025-07-10 19:59:49 [main] INFO com.mystore.testcases.LoginTest **** Completed Login Test ****
-2025-07-10 19:59:50 [main] INFO com.mystore.testcases.LoginTest Browser closed and driver removed
-2025-07-10 19:59:50 [main] INFO com.mystore.testcases.HomePageTest Initializing browser
-2025-07-10 19:59:52 [main] INFO com.mystore.testcases.HomePageTest Initialized browser with name - edge
-2025-07-10 19:59:52 [main] INFO com.mystore.testcases.HomePageTest window maximized
-2025-07-10 19:59:57 [main] INFO com.mystore.testcases.HomePageTest Initializing completed
-2025-07-10 19:59:58 [main] INFO com.mystore.testcases.HomePageTest **** Starting myPersonalInfoPageTest test ****
-2025-07-10 19:59:58 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[EdgeDriver: MicrosoftEdge on windows (fe7abe5b2f71f28f85c219a8bbd038b6)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-10 19:59:59 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[EdgeDriver: MicrosoftEdge on windows (fe7abe5b2f71f28f85c219a8bbd038b6)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-10 19:59:59 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[EdgeDriver: MicrosoftEdge on windows (fe7abe5b2f71f28f85c219a8bbd038b6)] -> id: email]
-2025-07-10 19:59:59 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[EdgeDriver: MicrosoftEdge on windows (fe7abe5b2f71f28f85c219a8bbd038b6)] -> id: email]
-2025-07-10 19:59:59 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password on element - [[EdgeDriver: MicrosoftEdge on windows (fe7abe5b2f71f28f85c219a8bbd038b6)] -> id: passwd]
-2025-07-10 19:59:59 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password on element - [[EdgeDriver: MicrosoftEdge on windows (fe7abe5b2f71f28f85c219a8bbd038b6)] -> id: passwd]
-2025-07-10 19:59:59 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[EdgeDriver: MicrosoftEdge on windows (fe7abe5b2f71f28f85c219a8bbd038b6)] -> id: SubmitLogin]
-2025-07-10 20:00:01 [main] INFO com.mystore.pageobjects.LoginPage Click on element - Proxy element for: DefaultElementLocator 'By.id: SubmitLogin'
-2025-07-10 20:00:01 [main] INFO com.mystore.pageobjects.HomePage Checking if element is displayed - [[EdgeDriver: MicrosoftEdge on windows (fe7abe5b2f71f28f85c219a8bbd038b6)] -> xpath: //span[contains(text(),'My personal information')]]
-2025-07-10 20:00:01 [main] INFO com.mystore.pageobjects.HomePage  Element is displayed 
-2025-07-10 20:00:01 [main] INFO com.mystore.testcases.HomePageTest **** Completed myPersonalInfoPageTest test ****
-2025-07-10 20:00:02 [main] INFO com.mystore.testcases.HomePageTest Browser closed and driver removed
-2025-07-10 20:00:02 [main] INFO com.mystore.testcases.IndexPageTest Initializing browser
-2025-07-10 20:00:03 [main] INFO com.mystore.testcases.IndexPageTest Initialized browser with name - edge
-2025-07-10 20:00:03 [main] INFO com.mystore.testcases.IndexPageTest window maximized
-2025-07-10 20:00:09 [main] INFO com.mystore.testcases.IndexPageTest Initializing completed
-2025-07-10 20:00:09 [main] INFO com.mystore.testcases.IndexPageTest **** Starting verifyLogo test ****
-2025-07-10 20:00:09 [main] INFO com.mystore.pageobjects.IndexPage Checking if element is displayed - [[EdgeDriver: MicrosoftEdge on windows (be4ff914076b44c6dded7c2e80d7e058)] -> xpath: //img[@alt='My Shop']]
-2025-07-10 20:00:09 [main] INFO com.mystore.pageobjects.IndexPage  Element is displayed 
-2025-07-10 20:00:09 [main] INFO com.mystore.testcases.IndexPageTest **** Completed verifyLogo test ****
-2025-07-10 20:00:10 [main] INFO com.mystore.testcases.IndexPageTest Browser closed and driver removed
-2025-07-10 20:00:10 [main] INFO com.mystore.testcases.IndexPageTest Initializing browser
-2025-07-10 20:00:11 [main] INFO com.mystore.testcases.IndexPageTest Initialized browser with name - edge
-2025-07-10 20:00:11 [main] INFO com.mystore.testcases.IndexPageTest window maximized
-2025-07-10 20:00:17 [main] INFO com.mystore.testcases.IndexPageTest Initializing completed
-2025-07-10 20:00:17 [main] INFO com.mystore.testcases.IndexPageTest **** Starting verifyTitle test ****
-2025-07-10 20:00:17 [main] INFO com.mystore.testcases.IndexPageTest **** Completed verifyTitle test ****
-2025-07-10 20:00:17 [main] INFO com.mystore.testcases.IndexPageTest Browser closed and driver removed
-2025-07-10 20:00:17 [main] INFO com.mystore.testcases.SearchPageTest Initializing browser
-2025-07-10 20:00:19 [main] INFO com.mystore.testcases.SearchPageTest Initialized browser with name - edge
-2025-07-10 20:00:19 [main] INFO com.mystore.testcases.SearchPageTest window maximized
-2025-07-10 20:00:24 [main] INFO com.mystore.testcases.SearchPageTest Initializing completed
-2025-07-10 20:00:24 [main] INFO com.mystore.testcases.SearchPageTest **** Starting searchProducts test ****
-2025-07-10 20:00:24 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-10 20:00:26 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-10 20:00:26 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: email]
-2025-07-10 20:00:26 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: email]
-2025-07-10 20:00:26 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: passwd]
-2025-07-10 20:00:26 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: passwd]
-2025-07-10 20:00:26 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: SubmitLogin]
-2025-07-10 20:00:28 [main] INFO com.mystore.pageobjects.LoginPage Click on element - Proxy element for: DefaultElementLocator 'By.id: SubmitLogin'
-2025-07-10 20:00:28 [main] INFO com.mystore.pageobjects.HomePage trying to sendkeys, with text - Printed Chiffon Dress on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: search_query_top]
-2025-07-10 20:00:28 [main] INFO com.mystore.pageobjects.HomePage successfully performed sendkeys, with text - Printed Chiffon Dress on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: search_query_top]
-2025-07-10 20:00:28 [main] INFO com.mystore.pageobjects.HomePage Trying to click on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> xpath: //button[@name='submit_search']]
-2025-07-10 20:00:30 [main] INFO com.mystore.pageobjects.HomePage Click on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> xpath: //button[@name='submit_search']]
-2025-07-10 20:00:30 [main] INFO com.mystore.pageobjects.SearchResultPage Verifying text on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']]
-2025-07-10 20:00:30 [main] INFO com.mystore.pageobjects.SearchResultPage Successfully verifed text on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']]
-2025-07-10 20:00:30 [main] INFO com.mystore.pageobjects.SearchResultPage Trying to click on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']]
-2025-07-10 20:00:31 [main] INFO com.mystore.pageobjects.SearchResultPage Click on element - Proxy element for: DefaultElementLocator 'By.xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']'
-2025-07-10 20:00:32 [main] INFO com.mystore.pageobjects.SearchResultPage Trying to select value - L from drop down -[[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: group_1]
-2025-07-10 20:00:32 [main] INFO com.mystore.pageobjects.SearchResultPage  Clicked on dropdown - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: group_1]
-2025-07-10 20:00:32 [main] INFO com.mystore.pageobjects.SearchResultPage selected value Lfrom drop down - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: group_1]
-2025-07-10 20:00:32 [main] INFO com.mystore.pageobjects.SearchResultPage trying to getText on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: our_price_display]
-2025-07-10 20:00:32 [main] INFO com.mystore.pageobjects.SearchResultPage returning getText on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: our_price_display]
-2025-07-10 20:00:32 [main] INFO com.mystore.pageobjects.SearchResultPage trying to clear textbox - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: quantity_wanted]
-2025-07-10 20:00:32 [main] INFO com.mystore.pageobjects.SearchResultPage successfully cleared textbox - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: quantity_wanted]
-2025-07-10 20:00:32 [main] INFO com.mystore.pageobjects.SearchResultPage trying to sendkeys, with text - 2 on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: quantity_wanted]
-2025-07-10 20:00:33 [main] INFO com.mystore.pageobjects.SearchResultPage successfully performed sendkeys, with text - 2 on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: quantity_wanted]
-2025-07-10 20:00:33 [main] INFO com.mystore.pageobjects.SearchResultPage trying to clear textbox - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: quantity_wanted]
-2025-07-10 20:00:33 [main] INFO com.mystore.pageobjects.SearchResultPage successfully cleared textbox - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: quantity_wanted]
-2025-07-10 20:00:33 [main] INFO com.mystore.pageobjects.SearchResultPage trying to sendkeys, with text - 2 on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: quantity_wanted]
-2025-07-10 20:00:33 [main] INFO com.mystore.pageobjects.SearchResultPage successfully performed sendkeys, with text - 2 on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: quantity_wanted]
-2025-07-10 20:00:33 [main] INFO com.mystore.pageobjects.SearchResultPage trying to getText on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: availability_value]
-2025-07-10 20:00:33 [main] INFO com.mystore.pageobjects.SearchResultPage returning getText on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> id: availability_value]
-2025-07-10 20:00:33 [main] INFO com.mystore.pageobjects.SearchResultPage Trying to click on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> xpath: //button[@name='Submit']]
-2025-07-10 20:00:33 [main] INFO com.mystore.pageobjects.SearchResultPage Click on element - [[EdgeDriver: MicrosoftEdge on windows (128b7aa0b14742e716b90df970f1ca02)] -> xpath: //button[@name='Submit']]
-2025-07-10 20:00:33 [main] INFO com.mystore.testcases.SearchPageTest **** Completed searchProducts test ****
-2025-07-10 20:00:33 [main] INFO com.mystore.testcases.SearchPageTest Browser closed and driver removed
+2025-07-12 16:15:46 [main] INFO com.mystore.testcases.SearchPageTest Initializing browser
+2025-07-12 16:15:49 [main] INFO com.mystore.testcases.SearchPageTest Initialized browser with name - firefox
+2025-07-12 16:15:49 [main] INFO com.mystore.testcases.SearchPageTest window maximized
+2025-07-12 16:15:56 [main] INFO com.mystore.testcases.SearchPageTest Initializing completed
+2025-07-12 16:15:56 [main] INFO com.mystore.testcases.SearchPageTest **** Starting searchProducts test ****
+2025-07-12 16:15:56 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-07-12 16:15:57 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-07-12 16:15:57 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: email]
+2025-07-12 16:15:57 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: email]
+2025-07-12 16:15:57 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: passwd]
+2025-07-12 16:15:57 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: passwd]
+2025-07-12 16:15:57 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: SubmitLogin]
+2025-07-12 16:15:59 [main] INFO com.mystore.pageobjects.LoginPage Click on element - Proxy element for: DefaultElementLocator 'By.id: SubmitLogin'
+2025-07-12 16:15:59 [main] INFO com.mystore.pageobjects.HomePage trying to sendkeys, with text - Printed Chiffon Dress on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: search_query_top]
+2025-07-12 16:15:59 [main] INFO com.mystore.pageobjects.HomePage successfully performed sendkeys, with text - Printed Chiffon Dress on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: search_query_top]
+2025-07-12 16:15:59 [main] INFO com.mystore.pageobjects.HomePage Trying to click on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> xpath: //button[@name='submit_search']]
+2025-07-12 16:16:01 [main] INFO com.mystore.pageobjects.HomePage Click on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> xpath: //button[@name='submit_search']]
+2025-07-12 16:16:01 [main] INFO com.mystore.pageobjects.SearchResultPage Verifying text on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']]
+2025-07-12 16:16:01 [main] INFO com.mystore.pageobjects.SearchResultPage Successfully verifed text on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']]
+2025-07-12 16:16:01 [main] INFO com.mystore.pageobjects.SearchResultPage Trying to click on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']]
+2025-07-12 16:16:03 [main] INFO com.mystore.pageobjects.SearchResultPage Click on element - Proxy element for: DefaultElementLocator 'By.xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']'
+2025-07-12 16:16:03 [main] INFO com.mystore.pageobjects.SearchResultPage Trying to select value - L from drop down -[[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: group_1]
+2025-07-12 16:16:03 [main] INFO com.mystore.pageobjects.SearchResultPage  Clicked on dropdown - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: group_1]
+2025-07-12 16:16:03 [main] INFO com.mystore.pageobjects.SearchResultPage selected value Lfrom drop down - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: group_1]
+2025-07-12 16:16:03 [main] INFO com.mystore.pageobjects.SearchResultPage trying to getText on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: our_price_display]
+2025-07-12 16:16:03 [main] INFO com.mystore.pageobjects.SearchResultPage returning getText on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: our_price_display]
+2025-07-12 16:16:03 [main] INFO com.mystore.pageobjects.SearchResultPage Clicking on chkstock
+2025-07-12 16:16:03 [main] INFO com.mystore.pageobjects.SearchResultPage trying to getText on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: availability_value]
+2025-07-12 16:16:03 [main] INFO com.mystore.pageobjects.SearchResultPage returning getText on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> id: availability_value]
+2025-07-12 16:16:03 [main] INFO com.mystore.pageobjects.SearchResultPage Trying to click on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> xpath: //button[@name='Submit']]
+2025-07-12 16:16:04 [main] INFO com.mystore.pageobjects.SearchResultPage Click on element - [[FirefoxDriver: firefox on windows (8c31f7a1-b5a3-494c-bf56-43f116727163)] -> xpath: //button[@name='Submit']]
+2025-07-12 16:16:04 [main] INFO com.mystore.testcases.SearchPageTest **** Completed searchProducts test ****
+2025-07-12 16:16:05 [main] INFO com.mystore.testcases.SearchPageTest Browser closed and driver removed

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Cross Browser Sanity Suite" verbose="3" parallel="tests">
+<parameter name="isHeadless" value="true"/> <!--Make value as False to run in real browser instance -->
 	<!--  Sanity tests  -->
 	<listeners>
         <listener class-name="com.mystore.listener.ExtentReportListener"/>

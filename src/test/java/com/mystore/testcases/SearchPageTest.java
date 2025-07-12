@@ -25,7 +25,7 @@ public class SearchPageTest extends BaseClass {
 	public void searchProducts() throws Throwable {
 		logger.info("**** Starting searchProducts test ****");
 		addToCartPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).searchMethod(searchItem).verifySearchResultandClick(searchItem)
-					  .selectSize("L").selectQuantity("2").selectQuantity("2").checkStock().addToCart();
+					  .selectSize("L").selectQuantity("2").checkStock().addToCart();
 		logger.info("**** Completed searchProducts test ****");
 	}
 	

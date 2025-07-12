@@ -50,10 +50,12 @@ public class SearchResultPage extends BaseClass {
 	public SearchResultPage selectSize(String size) {
 		selectValueFromDropDown(drpdwnSize,size);
 		this.productPrice = getVisibleText(productPriceDisplayed);
+		logger.info("Clicking on chkstock");
+		chkStock.click();
 		return this;
 	}
 	
-	public SearchResultPage selectQuantity(String quantity) {
+	public SearchResultPage selectQuantity(String quantity) throws Exception {
 		this.productQuantity=quantity;
 		textBoxClear(txtQuantity);
 		enterText(txtQuantity, productQuantity);

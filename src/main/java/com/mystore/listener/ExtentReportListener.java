@@ -1,5 +1,6 @@
 package com.mystore.listener;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -15,6 +16,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.mystore.base.BaseClass;
 import com.mystore.utility.ExtentManager;
+import com.mystore.utility.ScreenshotUtility;
 
 public class ExtentReportListener implements ITestListener, ISuiteListener {
 	    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
@@ -24,12 +26,19 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 	    	
 	    	String suiteName = suite.getName(); // dynamically get suite name
 	    	String browserName = suite.getXmlSuite().getParameter("browserName"); // gets browser name from suite
+	    	String headless= suite.getXmlSuite().getParameter("isHeadless"); // gets headless value from suite
 	        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 	        String reportPath = System.getProperty("user.dir") + "/test-output/Reports/ExtentReport_" + timestamp + ".html";
 
 	        ExtentSparkReporter spark = new ExtentSparkReporter(reportPath);
 	        spark.config().setDocumentTitle(BaseClass.prop.getProperty("documentTitle")); 
 	        spark.config().setReportName(suiteName); //  dynamic name
+	        spark.config().setCss(
+	        	    ".nav-wrapper .brand-logo { " +
+	        	    "background: url('../../Logo/MyStoreLogo.jpg') no-repeat left center; " +
+	        	    "background-size: contain; " +
+	        	    "text-indent: -9999px; }"
+	        	);  // adds logo in extent report
 
 	        ExtentReports extent = new ExtentReports();
 	        extent.attachReporter(spark);
@@ -40,8 +49,11 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 	            browserName = "Not Provided";
 	        }
 	        extent.setSystemInfo("Browser", browserName);
+	        extent.setSystemInfo("HeadLess", headless );
 	        System.out.println(browserName);
 	        ExtentManager.setInstance(extent); // assign to utility class
+	        
+	        
 	    	
 	    }
 
@@ -70,16 +82,18 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 
 	        Object currentClass = result.getInstance();
 	        WebDriver driver = ((com.mystore.base.BaseClass) currentClass).getDriver();
-
-	   /*     String screenshotPath = ScreenshotUtil.captureScreenshot(driver, result.getMethod().getMethodName());
+	        
+	     // Capture screenshot and attach to report
+	        String screenshotPath = ScreenshotUtility.captureScreenshot(driver, result.getMethod().getMethodName());
 	        try {
 	            extentTest.get().addScreenCaptureFromPath(screenshotPath);
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
-	   */ }
 
-	//    @Override
+	    }
+
+	    @Override
 	    public void onTestSkipped(ITestResult result) {
 	        extentTest.get().log(Status.SKIP, "Test Skipped");
 	    }

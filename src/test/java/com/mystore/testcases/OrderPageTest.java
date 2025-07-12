@@ -32,7 +32,7 @@ public class OrderPageTest extends BaseClass{
 	public void verifyOrderPage() throws Throwable {
 		logger.info("**** Starting verifyOrderPage test ****");
 		addToCartPage=indexPage.clickOnSignInButton().loginWithValidCreds(prop.getProperty("username"), prop.getProperty("password")).searchMethod(searchItem).verifySearchResultandClick(searchItem)
-				.selectSize("L").selectQuantity("2").selectQuantity("2").checkStock().addToCart();
+				.selectSize("L").selectQuantity("2").checkStock().addToCart();
 		actualSuccessMsg=addToCartPage.validateAddToCartSuccessMsg();
 		Assert.assertEquals(actualSuccessMsg, expectedSuccessMsg);
 		addressPage =addToCartPage.checkCartValue().proceedToCheckOutOrderPage().checkTotalOrderPg().proceedToCheckOutAddressPage();

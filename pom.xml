@@ -93,14 +93,14 @@
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
-						<browser>chrome</browser>
+				<!-- 		<browser>chrome</browser>
 						<isLambdaTest>false</isLambdaTest>
-						<isHeadless>true</isHeadless>
+						<isHeadless>true</isHeadless> -->
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 
-		</plugins>
+		</plugins>  
 
 	</build>
   

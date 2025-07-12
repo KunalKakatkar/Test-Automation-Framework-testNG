@@ -6,7 +6,7 @@ public class TestUtil {
 	
 	public static long PAGE_LOAD_TIMEOUT = 40;
 	public static long IMPLICITLY_WAIT = 15;
-	public static long EXPLICITLY_WAIT = 30;
+	public static long EXPLICITLY_WAIT = 50;
 	private static final String ORDER_SUCCESS_MESSAGE = "Your order on My Shop is complete.";
 	private static final String PROFILE_NAME="Kunal Kakatkar";
 	private long randomNumber;
