@@ -3,14 +3,19 @@ package com.mystore.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
-import java.util.List;
-import java.util.function.Function;
+import java.util.HashMap;
+import java.util.List;	
 import java.util.Properties;
+import java.util.function.Function;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,23 +24,16 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
 import com.mystore.pageobjects.IndexPage;
 import com.mystore.utility.TestUtil;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
@@ -44,13 +42,16 @@ public class BaseClass {
 	public static Properties prop;
 	// public static WebDriver driver;
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+	private static ThreadLocal<WebDriver> driverLocal = new ThreadLocal<>();
 	public WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(TestUtil.EXPLICITLY_WAIT));
 	public Logger logger = LogManager.getLogger(this.getClass());
+	private static final String HUB_URL = "https://hub.lambdatest.com/wd/hub";
 	protected IndexPage indexPage;
+	String testName;
 
 	public static WebDriver getDriver() {
 		// Get driver from thread local map
-		return driver.get();
+		return driverLocal.get();
 	}
 
 	// reading config file when data (like report name, host etc) from config file
@@ -86,10 +87,10 @@ public class BaseClass {
 	 */
 
 	@BeforeMethod(alwaysRun = true)
-	@Parameters({ "browserName", "isHeadless" })
-	public void setup(String browser, boolean isHeadless) {
-		initialization(browser, isHeadless);
-		System.out.println("Headless flag: " + isHeadless);
+	@Parameters({ "browserName", "isHeadless", "isLambdaTest" })
+	public void setup(String browser, boolean isHeadless, boolean isLambdaTest, Method method) {
+		testName = method.getName(); // dynamic test name in LambdaTest
+		initialization(browser, isHeadless, isLambdaTest);
 		indexPage = new IndexPage(getDriver());
 	}
 
@@ -98,7 +99,8 @@ public class BaseClass {
 		WebDriver localDriver = getDriver();
 		if (localDriver != null) {
 			localDriver.quit(); // Close the browser
-			driver.remove(); // Remove the driver from ThreadLocal
+			driver.remove(); // Remove the driver from ThreadLocal	
+			driverLocal.remove();
 			logger.info("Browser closed and driver removed");
 		} else {
 			logger.warn("Driver was null in tearDown()");
@@ -106,52 +108,91 @@ public class BaseClass {
 	}
 
 	// launch URL
-	public void initialization(String browser, boolean isHeadless) {
+	public void initialization(String browser, boolean isHeadless, boolean isLambdaTest) {
 		logger.info("Initializing browser");
+		if(isLambdaTest) {
+			MutableCapabilities capabilities = new MutableCapabilities();
+            capabilities.setCapability("browserName", browser);
+            capabilities.setCapability("browserVersion", "138");
+            HashMap<String, Object> ltOptions = new HashMap<>();
+            ltOptions.put("username", "kunalkakatkar16");
+            ltOptions.put("accessKey", "LT_xY41eL8RWAWdcPIFFwAFO09FUvq6zBPU2eP8BZb1ZwKWdHA");
+            ltOptions.put("platformName", "Windows 10");
+            ltOptions.put("resolution", "1920x1080");
+            ltOptions.put("build", "Selenium 4");
+            ltOptions.put("project", "My_Store");
+            ltOptions.put("name", testName);
+            ltOptions.put("w3c", true);
+            capabilities.setCapability("LT:Options", ltOptions);
+            
+            WebDriver driver = null;
+            try {
+            	WebDriver remoteDriver = new RemoteWebDriver(new URL(HUB_URL), capabilities);
+                driverLocal.set(remoteDriver);
+                wait = new WebDriverWait(remoteDriver, Duration.ofSeconds(30));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Invalid LambdaTest URL");
+            }
+            	
+		} else {
 		try {
+			 WebDriver localDriver = null;  //for lambda test
 			if (browser.equalsIgnoreCase("chrome")) {
+				ChromeOptions options = new ChromeOptions(); //added
 				if (isHeadless) {
-					ChromeOptions options = new ChromeOptions();
+					logger.info("Initializing browser - Headless Chrome");
 					options.addArguments("--headless=new");
 					options.addArguments("--disable-gpu");
 					options.addArguments("--window-size=1920,1080");
 					driver.set(new ChromeDriver(options));
 					wait = new WebDriverWait(driver.get(), Duration.ofSeconds(30));
 				} else {
+					logger.info("Initializing browser - Chrome");
 					WebDriverManager.chromedriver().setup();
 					// Set Browser to ThreadLocalMap
-					driver.set(new ChromeDriver());
+				//	driver.set(new ChromeDriver());
+					localDriver = new ChromeDriver(options); // added and commented above line for lambda test
 				}
 			} else if (browser.equalsIgnoreCase("edge")) {
+				 EdgeOptions options = new EdgeOptions();
 				if (isHeadless) {
-					EdgeOptions options = new EdgeOptions();
+					logger.info("Initializing browser - Headless Edge");
 					options.addArguments("--headless=new");
 					options.addArguments("--disable-gpu");
 					options.addArguments("--window-size=1920,1080");
 					driver.set(new EdgeDriver(options));
 					wait = new WebDriverWait(driver.get(), Duration.ofSeconds(30));
 				} else {
+					logger.info("Initializing browser - Edge");
 					WebDriverManager.edgedriver().setup();
 					// Set Browser to ThreadLocalMap
-					driver.set(new EdgeDriver());
+					//driver.set(new EdgeDriver());
+					 localDriver = new EdgeDriver(options); // added and commented above line for lambda test
 				}
 			} else if (browser.equalsIgnoreCase("firefox")) {
+				FirefoxOptions options = new FirefoxOptions();
 				if (isHeadless) {
-					FirefoxOptions options = new FirefoxOptions();
+					logger.info("Initializing browser - Headless Firefox");
 					options.addArguments("--headless");
 					options.addArguments("--disable-gpu");
 					options.addArguments("--window-size=1920,1080");
 					driver.set(new FirefoxDriver(options));
 					wait = new WebDriverWait(driver.get(), Duration.ofSeconds(30));
 				} else {
+					logger.info("Initializing browser - Firefox");
 					WebDriverManager.firefoxdriver().setup();
 					// Set Browser to ThreadLocalMap
-					driver.set(new FirefoxDriver());
+					//driver.set(new FirefoxDriver()); 
+					 localDriver = new FirefoxDriver(options);// added and commented above line for lambda test
 				}
 			}
+			 	driverLocal.set(localDriver);
+	            wait = new WebDriverWait(localDriver, Duration.ofSeconds(30));
 		} catch (Exception e) {
 			throw e;
 
+		}
 		}
 
 		logger.info("Initialized browser with name - " + browser);
@@ -271,26 +312,21 @@ public class BaseClass {
 
 	// clear text from textbox
 	public void textBoxClear(WebElement element) throws Exception {
-	/*	try {
-			// ((JavascriptExecutor)
-			// getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+		try {
+		
 			logger.info("trying to clear textbox - " + element);
 			WebElement tempEle = wait.until(ExpectedConditions.elementToBeClickable(element));
-			Thread.sleep(5000);
-	//		((JavascriptExecutor) getDriver() ).executeScript("arguments[0].scrollIntoView(true);", element);
-	//		tempEle.click();
+			tempEle.click();
 			logger.info("Clicked on the textbox to be cleared - " + element);
 			tempEle.clear();
-			((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-			Thread.sleep(300); // Wait after scroll
-			((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", element);
 			logger.info("successfully cleared textbox - " + element);
 		} catch (Exception e) {
 			System.err.println("Unable to clear text at element " + element);
 			throw e;
 		}
-   */	
-			WebDriverWait waits = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
+   	
+	
+	/*		WebDriverWait waits = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
 			Function<WebDriver, Boolean> jsCondition = new Function<WebDriver, Boolean>() {
 				
 		    public Boolean apply(WebDriver driver ) {
@@ -303,10 +339,10 @@ public class BaseClass {
 		    
 		};
 		waits.until(jsCondition);
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+	//	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(300);
 		((JavascriptExecutor) driver).executeScript("arguments[0].value = '';", element);
-	
+	*/
 	}
 
 	// to get text

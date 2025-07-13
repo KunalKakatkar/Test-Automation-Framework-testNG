@@ -27,6 +27,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 	    	String suiteName = suite.getName(); // dynamically get suite name
 	    	String browserName = suite.getXmlSuite().getParameter("browserName"); // gets browser name from suite
 	    	String headless= suite.getXmlSuite().getParameter("isHeadless"); // gets headless value from suite
+	    	String lambdaTest= suite.getXmlSuite().getParameter("isLambdaTest"); // gets isLambdaTest value from suite 
 	        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 	        String reportPath = System.getProperty("user.dir") + "/test-output/Reports/ExtentReport_" + timestamp + ".html";
 
@@ -50,6 +51,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
 	        }
 	        extent.setSystemInfo("Browser", browserName);
 	        extent.setSystemInfo("HeadLess", headless );
+	        extent.setSystemInfo("LambdaTest", lambdaTest );
 	        System.out.println(browserName);
 	        ExtentManager.setInstance(extent); // assign to utility class
 	        

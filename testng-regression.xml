@@ -3,6 +3,7 @@
 <suite name="Regression Suite" verbose="3">
 <parameter name="browserName" value="firefox" />
 <parameter name="isHeadless" value="true"/> <!--Make value as False to run in real browser instance -->
+<parameter name = "isLambdaTest" value="true"/> <!--for lambda test -->	
 	<!--  Regression tests  -->
 	<listeners>
         <listener class-name="com.mystore.listener.ExtentReportListener"/>
@@ -15,16 +16,16 @@
 			</run>
 		</groups>
 		<classes>
-	<!--		<class name="com.mystore.testcases.LoginTest" />
-			<class name="com.mystore.testcases.HomePageTest" /> -->
-		<class name="com.mystore.testcases.SearchPageTest" />
-	<!--			<class name="com.mystore.testcases.IndexPageTest" />
+			<class name="com.mystore.testcases.LoginTest" />
+			<class name="com.mystore.testcases.HomePageTest" /> 
+			<class name="com.mystore.testcases.SearchPageTest" />
+			<class name="com.mystore.testcases.IndexPageTest" />
 			<class name="com.mystore.testcases.AddToCartTest" />
 			<class name="com.mystore.testcases.OrderPageTest" />
 			<class name="com.mystore.testcases.ConfirmOrderTest" />  
 			<class name="com.mystore.testcases.PaymentTest" />
-		<class name="com.mystore.testcases.AccountCreationTest" /> 
-			<class name="com.mystore.testcases.IncorrectLoginTest" /> -->
+			<class name="com.mystore.testcases.AccountCreationTest" /> 
+			<class name="com.mystore.testcases.IncorrectLoginTest" /> 
 		</classes>
 	</test> <!--
 	Regression Test -->

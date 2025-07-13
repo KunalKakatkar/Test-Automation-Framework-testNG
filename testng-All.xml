@@ -3,6 +3,7 @@
 <suite name="Suite" verbose="3">
 <parameter name="browserName" value="edge"/>
 <parameter name="isHeadless" value="true"/> <!--Make value as False to run in real browser instance -->
+<parameter name = "isLambdaTest" value="true"/> <!--for lambda test -->
 	<!--  All tests  -->
 	<listeners>
         <listener class-name="com.mystore.listener.ExtentReportListener"/>
