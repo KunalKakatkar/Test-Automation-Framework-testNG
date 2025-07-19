@@ -1,87 +1,18 @@
-2025-07-13 16:28:19 [main] INFO com.mystore.testcases.LoginTest Initializing browser
-2025-07-13 16:28:27 [main] INFO com.mystore.testcases.LoginTest Initialized browser with name - chrome
-2025-07-13 16:28:27 [main] INFO com.mystore.testcases.LoginTest window maximized
-2025-07-13 16:28:32 [main] INFO com.mystore.testcases.LoginTest Initializing completed
-2025-07-13 16:28:32 [main] INFO com.mystore.testcases.LoginTest **** Starting Login Test ****
-2025-07-13 16:28:32 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[RemoteWebDriver: chrome on windows (8b090eb1358986adc6366ede42459cad)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-13 16:28:34 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[RemoteWebDriver: chrome on windows (8b090eb1358986adc6366ede42459cad)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-13 16:28:34 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[RemoteWebDriver: chrome on windows (8b090eb1358986adc6366ede42459cad)] -> id: email]
-2025-07-13 16:28:35 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[RemoteWebDriver: chrome on windows (8b090eb1358986adc6366ede42459cad)] -> id: email]
-2025-07-13 16:28:35 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password on element - [[RemoteWebDriver: chrome on windows (8b090eb1358986adc6366ede42459cad)] -> id: passwd]
-2025-07-13 16:28:35 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password on element - [[RemoteWebDriver: chrome on windows (8b090eb1358986adc6366ede42459cad)] -> id: passwd]
-2025-07-13 16:28:35 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[RemoteWebDriver: chrome on windows (8b090eb1358986adc6366ede42459cad)] -> id: SubmitLogin]
-2025-07-13 16:28:37 [main] INFO com.mystore.pageobjects.LoginPage Click on element - Proxy element for: DefaultElementLocator 'By.id: SubmitLogin'
-2025-07-13 16:28:37 [main] INFO com.mystore.pageobjects.HomePage trying to getText on element - [[RemoteWebDriver: chrome on windows (8b090eb1358986adc6366ede42459cad)] -> xpath: //a[@class='account']//span]
-2025-07-13 16:28:38 [main] INFO com.mystore.pageobjects.HomePage returning getText on element - [[RemoteWebDriver: chrome on windows (8b090eb1358986adc6366ede42459cad)] -> xpath: //a[@class='account']//span]
-2025-07-13 16:28:38 [main] INFO com.mystore.testcases.LoginTest **** Completed Login Test ****
-2025-07-13 16:28:38 [main] INFO com.mystore.testcases.LoginTest Browser closed and driver removed
-2025-07-13 16:28:38 [main] INFO com.mystore.testcases.HomePageTest Initializing browser
-2025-07-13 16:28:45 [main] INFO com.mystore.testcases.HomePageTest Initialized browser with name - chrome
-2025-07-13 16:28:45 [main] INFO com.mystore.testcases.HomePageTest window maximized
-2025-07-13 16:28:48 [main] INFO com.mystore.testcases.HomePageTest Initializing completed
-2025-07-13 16:28:48 [main] INFO com.mystore.testcases.HomePageTest **** Starting myPersonalInfoPageTest test ****
-2025-07-13 16:28:48 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[RemoteWebDriver: chrome on windows (70da49e033cd93db1cf0643f9e82136d)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-13 16:28:50 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[RemoteWebDriver: chrome on windows (70da49e033cd93db1cf0643f9e82136d)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-13 16:28:50 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[RemoteWebDriver: chrome on windows (70da49e033cd93db1cf0643f9e82136d)] -> id: email]
-2025-07-13 16:28:51 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[RemoteWebDriver: chrome on windows (70da49e033cd93db1cf0643f9e82136d)] -> id: email]
-2025-07-13 16:28:51 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password on element - [[RemoteWebDriver: chrome on windows (70da49e033cd93db1cf0643f9e82136d)] -> id: passwd]
-2025-07-13 16:28:52 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password on element - [[RemoteWebDriver: chrome on windows (70da49e033cd93db1cf0643f9e82136d)] -> id: passwd]
-2025-07-13 16:28:52 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[RemoteWebDriver: chrome on windows (70da49e033cd93db1cf0643f9e82136d)] -> id: SubmitLogin]
-2025-07-13 16:28:53 [main] INFO com.mystore.pageobjects.LoginPage Click on element - Proxy element for: DefaultElementLocator 'By.id: SubmitLogin'
-2025-07-13 16:28:53 [main] INFO com.mystore.pageobjects.HomePage Checking if element is displayed - [[RemoteWebDriver: chrome on windows (70da49e033cd93db1cf0643f9e82136d)] -> xpath: //span[contains(text(),'My personal information')]]
-2025-07-13 16:28:53 [main] INFO com.mystore.pageobjects.HomePage  Element is displayed 
-2025-07-13 16:28:53 [main] INFO com.mystore.testcases.HomePageTest **** Completed myPersonalInfoPageTest test ****
-2025-07-13 16:28:54 [main] INFO com.mystore.testcases.HomePageTest Browser closed and driver removed
-2025-07-13 16:28:54 [main] INFO com.mystore.testcases.IndexPageTest Initializing browser
-2025-07-13 16:29:01 [main] INFO com.mystore.testcases.IndexPageTest Initialized browser with name - chrome
-2025-07-13 16:29:01 [main] INFO com.mystore.testcases.IndexPageTest window maximized
-2025-07-13 16:29:03 [main] INFO com.mystore.testcases.IndexPageTest Initializing completed
-2025-07-13 16:29:03 [main] INFO com.mystore.testcases.IndexPageTest **** Starting verifyLogo test ****
-2025-07-13 16:29:05 [main] INFO com.mystore.pageobjects.IndexPage Checking if element is displayed - [[RemoteWebDriver: chrome on windows (a31b43b4b4f0dd62affadbce2c40d0b6)] -> xpath: //img[@alt='My Shop']]
-2025-07-13 16:29:05 [main] INFO com.mystore.pageobjects.IndexPage  Element is displayed 
-2025-07-13 16:29:05 [main] INFO com.mystore.testcases.IndexPageTest **** Completed verifyLogo test ****
-2025-07-13 16:29:05 [main] INFO com.mystore.testcases.IndexPageTest Browser closed and driver removed
-2025-07-13 16:29:05 [main] INFO com.mystore.testcases.IndexPageTest Initializing browser
-2025-07-13 16:29:12 [main] INFO com.mystore.testcases.IndexPageTest Initialized browser with name - chrome
-2025-07-13 16:29:12 [main] INFO com.mystore.testcases.IndexPageTest window maximized
-2025-07-13 16:29:16 [main] INFO com.mystore.testcases.IndexPageTest Initializing completed
-2025-07-13 16:29:16 [main] INFO com.mystore.testcases.IndexPageTest **** Starting verifyTitle test ****
-2025-07-13 16:29:16 [main] INFO com.mystore.testcases.IndexPageTest **** Completed verifyTitle test ****
-2025-07-13 16:29:17 [main] INFO com.mystore.testcases.IndexPageTest Browser closed and driver removed
-2025-07-13 16:29:17 [main] INFO com.mystore.testcases.SearchPageTest Initializing browser
-2025-07-13 16:29:23 [main] INFO com.mystore.testcases.SearchPageTest Initialized browser with name - chrome
-2025-07-13 16:29:23 [main] INFO com.mystore.testcases.SearchPageTest window maximized
-2025-07-13 16:29:27 [main] INFO com.mystore.testcases.SearchPageTest Initializing completed
-2025-07-13 16:29:27 [main] INFO com.mystore.testcases.SearchPageTest **** Starting searchProducts test ****
-2025-07-13 16:29:27 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-13 16:29:29 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-13 16:29:29 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: email]
-2025-07-13 16:29:30 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: email]
-2025-07-13 16:29:30 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: passwd]
-2025-07-13 16:29:31 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: passwd]
-2025-07-13 16:29:31 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: SubmitLogin]
-2025-07-13 16:29:32 [main] INFO com.mystore.pageobjects.LoginPage Click on element - Proxy element for: DefaultElementLocator 'By.id: SubmitLogin'
-2025-07-13 16:29:32 [main] INFO com.mystore.pageobjects.HomePage trying to sendkeys, with text - Printed Chiffon Dress on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: search_query_top]
-2025-07-13 16:29:33 [main] INFO com.mystore.pageobjects.HomePage successfully performed sendkeys, with text - Printed Chiffon Dress on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: search_query_top]
-2025-07-13 16:29:33 [main] INFO com.mystore.pageobjects.HomePage Trying to click on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> xpath: //button[@name='submit_search']]
-2025-07-13 16:29:34 [main] INFO com.mystore.pageobjects.HomePage Click on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> xpath: //button[@name='submit_search']]
-2025-07-13 16:29:35 [main] INFO com.mystore.pageobjects.SearchResultPage Verifying text on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']]
-2025-07-13 16:29:35 [main] INFO com.mystore.pageobjects.SearchResultPage Successfully verifed text on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']]
-2025-07-13 16:29:35 [main] INFO com.mystore.pageobjects.SearchResultPage Trying to click on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']]
-2025-07-13 16:29:37 [main] INFO com.mystore.pageobjects.SearchResultPage Click on element - Proxy element for: DefaultElementLocator 'By.xpath: //a[contains(normalize-space(.),'Printed Chiffon Dress') and @itemprop='url']'
-2025-07-13 16:29:38 [main] INFO com.mystore.pageobjects.SearchResultPage Trying to select value - L from drop down -[[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: group_1]
-2025-07-13 16:29:38 [main] INFO com.mystore.pageobjects.SearchResultPage  Clicked on dropdown - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: group_1]
-2025-07-13 16:29:39 [main] INFO com.mystore.pageobjects.SearchResultPage selected value Lfrom drop down - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: group_1]
-2025-07-13 16:29:39 [main] INFO com.mystore.pageobjects.SearchResultPage trying to getText on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: our_price_display]
-2025-07-13 16:29:40 [main] INFO com.mystore.pageobjects.SearchResultPage returning getText on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: our_price_display]
-2025-07-13 16:29:40 [main] INFO com.mystore.pageobjects.SearchResultPage trying to clear textbox - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: quantity_wanted]
-2025-07-13 16:29:41 [main] INFO com.mystore.pageobjects.SearchResultPage Clicked on the textbox to be cleared - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: quantity_wanted]
-2025-07-13 16:29:41 [main] INFO com.mystore.pageobjects.SearchResultPage successfully cleared textbox - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: quantity_wanted]
-2025-07-13 16:29:41 [main] INFO com.mystore.pageobjects.SearchResultPage trying to sendkeys, with text - 2 on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: quantity_wanted]
-2025-07-13 16:29:42 [main] INFO com.mystore.pageobjects.SearchResultPage successfully performed sendkeys, with text - 2 on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: quantity_wanted]
-2025-07-13 16:29:42 [main] INFO com.mystore.pageobjects.SearchResultPage trying to getText on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: availability_value]
-2025-07-13 16:29:42 [main] INFO com.mystore.pageobjects.SearchResultPage returning getText on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> id: availability_value]
-2025-07-13 16:29:43 [main] INFO com.mystore.pageobjects.SearchResultPage Trying to click on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> xpath: //button[@name='Submit']]
-2025-07-13 16:29:43 [main] INFO com.mystore.pageobjects.SearchResultPage Click on element - [[RemoteWebDriver: chrome on windows (2f8db38fc95b8351ba562e8009918a45)] -> xpath: //button[@name='Submit']]
-2025-07-13 16:29:43 [main] INFO com.mystore.testcases.SearchPageTest **** Completed searchProducts test ****
-2025-07-13 16:29:43 [main] INFO com.mystore.testcases.SearchPageTest Browser closed and driver removed
+2025-07-19 14:17:11 [main] INFO com.mystore.testcases.LoginTest Initializing browser
+2025-07-19 14:17:11 [main] INFO com.mystore.testcases.LoginTest Initializing browser - Chrome
+2025-07-19 14:17:13 [main] INFO com.mystore.testcases.LoginTest Initialized browser with name - chrome
+2025-07-19 14:17:13 [main] INFO com.mystore.testcases.LoginTest window maximized
+2025-07-19 14:17:19 [main] INFO com.mystore.testcases.LoginTest Initializing completed
+2025-07-19 14:17:19 [main] INFO com.mystore.testcases.LoginTest **** Starting Login Test ****
+2025-07-19 14:17:19 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-07-19 14:17:20 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-07-19 14:17:20 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> id: email]
+2025-07-19 14:17:21 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> id: email]
+2025-07-19 14:17:21 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> id: passwd]
+2025-07-19 14:17:21 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> id: passwd]
+2025-07-19 14:17:21 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> id: SubmitLogin]
+2025-07-19 14:17:22 [main] INFO com.mystore.pageobjects.LoginPage Click on element - Proxy element for: DefaultElementLocator 'By.id: SubmitLogin'
+2025-07-19 14:17:22 [main] INFO com.mystore.pageobjects.HomePage trying to getText on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> xpath: //a[@class='account']//span]
+2025-07-19 14:17:22 [main] INFO com.mystore.pageobjects.HomePage returning getText on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> xpath: //a[@class='account']//span]
+2025-07-19 14:17:22 [main] INFO com.mystore.testcases.LoginTest **** Completed Login Test ****
+2025-07-19 14:17:23 [main] INFO com.mystore.testcases.LoginTest Browser closed and driver removed

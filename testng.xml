@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite" verbose="3">
-<parameter name="browserName" value="edge"/>
+<parameter name="browserName" value="chrome"/>
 <parameter name="isHeadless" value="false"/> <!--Make value as False to run in real browser instance -->
 <parameter name = "isLambdaTest" value="false"/> <!--for lambda test -->
 	<!--  All tests  -->
@@ -11,7 +11,7 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<class name="com.mystore.testcases.LoginTest" />
-			<class name="com.mystore.testcases.HomePageTest" />
+		 	<class name="com.mystore.testcases.HomePageTest" />
 			<class name="com.mystore.testcases.SearchPageTest" />
 			<class name="com.mystore.testcases.IndexPageTest" />
 			<class name="com.mystore.testcases.AddToCartTest" />
@@ -19,7 +19,7 @@
 			<class name="com.mystore.testcases.ConfirmOrderTest" />
 			<class name="com.mystore.testcases.PaymentTest" />
 			<class name="com.mystore.testcases.AccountCreationTest" />
-			<class name="com.mystore.testcases.IncorrectLoginTest" />
+			<class name="com.mystore.testcases.IncorrectLoginTest" /> 
 		</classes>
 	</test> <!--
 	Test -->

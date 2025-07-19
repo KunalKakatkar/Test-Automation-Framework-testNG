@@ -110,6 +110,7 @@ public class BaseClass {
 	// launch URL
 	public void initialization(String browser, boolean isHeadless, boolean isLambdaTest) {
 		logger.info("Initializing browser");
+		String driverPath = System.getProperty("user.dir");
 		if(isLambdaTest) {
 			MutableCapabilities capabilities = new MutableCapabilities();
             capabilities.setCapability("browserName", browser);
@@ -149,9 +150,10 @@ public class BaseClass {
 					wait = new WebDriverWait(driver.get(), Duration.ofSeconds(30));
 				} else {
 					logger.info("Initializing browser - Chrome");
-					WebDriverManager.chromedriver().setup();
+					//WebDriverManager.chromedriver().setup();
 					// Set Browser to ThreadLocalMap
 				//	driver.set(new ChromeDriver());
+					System.setProperty("webdriver.chrome.driver",driverPath+"\\drivers\\chromedriver.exe");
 					localDriver = new ChromeDriver(options); // added and commented above line for lambda test
 				}
 			} else if (browser.equalsIgnoreCase("edge")) {
@@ -165,10 +167,12 @@ public class BaseClass {
 					wait = new WebDriverWait(driver.get(), Duration.ofSeconds(30));
 				} else {
 					logger.info("Initializing browser - Edge");
-					WebDriverManager.edgedriver().setup();
+					//WebDriverManager.edgedriver().setup();
 					// Set Browser to ThreadLocalMap
 					//driver.set(new EdgeDriver());
-					 localDriver = new EdgeDriver(options); // added and commented above line for lambda test
+					// localDriver = new EdgeDriver(options); // added and commented above line for lambda test
+			        System.setProperty("webdriver.edge.driver", driverPath + "\\drivers\\msedgedriver.exe");
+			        localDriver = new EdgeDriver(options);
 				}
 			} else if (browser.equalsIgnoreCase("firefox")) {
 				FirefoxOptions options = new FirefoxOptions();
@@ -181,9 +185,10 @@ public class BaseClass {
 					wait = new WebDriverWait(driver.get(), Duration.ofSeconds(30));
 				} else {
 					logger.info("Initializing browser - Firefox");
-					WebDriverManager.firefoxdriver().setup();
+					//WebDriverManager.firefoxdriver().setup();
 					// Set Browser to ThreadLocalMap
-					//driver.set(new FirefoxDriver()); 
+					//driver.set(new FirefoxDriver());
+					System.setProperty("webdriver.firefox.driver", driverPath+ "\\drivers\\geckodriver.exe");
 					 localDriver = new FirefoxDriver(options);// added and commented above line for lambda test
 				}
 			}
