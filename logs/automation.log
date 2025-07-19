@@ -1,18 +1,48 @@
-2025-07-19 14:17:11 [main] INFO com.mystore.testcases.LoginTest Initializing browser
-2025-07-19 14:17:11 [main] INFO com.mystore.testcases.LoginTest Initializing browser - Chrome
-2025-07-19 14:17:13 [main] INFO com.mystore.testcases.LoginTest Initialized browser with name - chrome
-2025-07-19 14:17:13 [main] INFO com.mystore.testcases.LoginTest window maximized
-2025-07-19 14:17:19 [main] INFO com.mystore.testcases.LoginTest Initializing completed
-2025-07-19 14:17:19 [main] INFO com.mystore.testcases.LoginTest **** Starting Login Test ****
-2025-07-19 14:17:19 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-19 14:17:20 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> xpath: //a[contains(text(),'Sign in')]]
-2025-07-19 14:17:20 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> id: email]
-2025-07-19 14:17:21 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> id: email]
-2025-07-19 14:17:21 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> id: passwd]
-2025-07-19 14:17:21 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> id: passwd]
-2025-07-19 14:17:21 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> id: SubmitLogin]
-2025-07-19 14:17:22 [main] INFO com.mystore.pageobjects.LoginPage Click on element - Proxy element for: DefaultElementLocator 'By.id: SubmitLogin'
-2025-07-19 14:17:22 [main] INFO com.mystore.pageobjects.HomePage trying to getText on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> xpath: //a[@class='account']//span]
-2025-07-19 14:17:22 [main] INFO com.mystore.pageobjects.HomePage returning getText on element - [[ChromeDriver: chrome on windows (233360bb00bbe7b9f43e4c49d9288898)] -> xpath: //a[@class='account']//span]
-2025-07-19 14:17:22 [main] INFO com.mystore.testcases.LoginTest **** Completed Login Test ****
-2025-07-19 14:17:23 [main] INFO com.mystore.testcases.LoginTest Browser closed and driver removed
+2025-07-19 17:12:47 [main] INFO com.mystore.testcases.LoginTest Initializing browser
+2025-07-19 17:12:47 [main] INFO com.mystore.testcases.LoginTest Initializing browser - Chrome
+2025-07-19 17:12:49 [main] INFO com.mystore.testcases.LoginTest Initialized browser with name - chrome
+2025-07-19 17:12:49 [main] INFO com.mystore.testcases.LoginTest window maximized
+2025-07-19 17:12:55 [main] INFO com.mystore.testcases.LoginTest Initializing completed
+2025-07-19 17:12:55 [main] INFO com.mystore.testcases.LoginTest **** Starting Login Test ****
+2025-07-19 17:12:56 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[ChromeDriver: chrome on windows (8a5c381d3ac4e667938d32b21332a673)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-07-19 17:12:57 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[ChromeDriver: chrome on windows (8a5c381d3ac4e667938d32b21332a673)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-07-19 17:12:57 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[ChromeDriver: chrome on windows (8a5c381d3ac4e667938d32b21332a673)] -> id: email]
+2025-07-19 17:12:57 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[ChromeDriver: chrome on windows (8a5c381d3ac4e667938d32b21332a673)] -> id: email]
+2025-07-19 17:12:57 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password1 on element - [[ChromeDriver: chrome on windows (8a5c381d3ac4e667938d32b21332a673)] -> id: passwd]
+2025-07-19 17:12:57 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password1 on element - [[ChromeDriver: chrome on windows (8a5c381d3ac4e667938d32b21332a673)] -> id: passwd]
+2025-07-19 17:12:57 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[ChromeDriver: chrome on windows (8a5c381d3ac4e667938d32b21332a673)] -> id: SubmitLogin]
+2025-07-19 17:12:58 [main] INFO com.mystore.pageobjects.LoginPage Click on element - [[ChromeDriver: chrome on windows (8a5c381d3ac4e667938d32b21332a673)] -> id: SubmitLogin]
+2025-07-19 17:12:58 [main] INFO com.mystore.pageobjects.HomePage trying to getText on element - Proxy element for: DefaultElementLocator 'By.xpath: //a[@class='account']//span'
+2025-07-19 17:13:48 [main] INFO com.mystore.testcases.LoginTest Browser closed and driver removed
+2025-07-19 17:13:48 [main] INFO com.mystore.testcases.LoginTest Initializing browser
+2025-07-19 17:13:48 [main] INFO com.mystore.testcases.LoginTest Initializing browser - Chrome
+2025-07-19 17:13:49 [main] INFO com.mystore.testcases.LoginTest Initialized browser with name - chrome
+2025-07-19 17:13:50 [main] INFO com.mystore.testcases.LoginTest window maximized
+2025-07-19 17:13:54 [main] INFO com.mystore.testcases.LoginTest Initializing completed
+2025-07-19 17:13:54 [main] INFO com.mystore.testcases.LoginTest **** Starting Login Test ****
+2025-07-19 17:13:55 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[ChromeDriver: chrome on windows (5a0ef5c83c30057b41791c482648b5e6)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-07-19 17:13:56 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[ChromeDriver: chrome on windows (5a0ef5c83c30057b41791c482648b5e6)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-07-19 17:13:56 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[ChromeDriver: chrome on windows (5a0ef5c83c30057b41791c482648b5e6)] -> id: email]
+2025-07-19 17:13:56 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[ChromeDriver: chrome on windows (5a0ef5c83c30057b41791c482648b5e6)] -> id: email]
+2025-07-19 17:13:56 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password1 on element - [[ChromeDriver: chrome on windows (5a0ef5c83c30057b41791c482648b5e6)] -> id: passwd]
+2025-07-19 17:13:56 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password1 on element - [[ChromeDriver: chrome on windows (5a0ef5c83c30057b41791c482648b5e6)] -> id: passwd]
+2025-07-19 17:13:56 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[ChromeDriver: chrome on windows (5a0ef5c83c30057b41791c482648b5e6)] -> id: SubmitLogin]
+2025-07-19 17:13:57 [main] INFO com.mystore.pageobjects.LoginPage Click on element - [[ChromeDriver: chrome on windows (5a0ef5c83c30057b41791c482648b5e6)] -> id: SubmitLogin]
+2025-07-19 17:13:57 [main] INFO com.mystore.pageobjects.HomePage trying to getText on element - Proxy element for: DefaultElementLocator 'By.xpath: //a[@class='account']//span'
+2025-07-19 17:14:47 [main] INFO com.mystore.testcases.LoginTest Browser closed and driver removed
+2025-07-19 17:14:47 [main] INFO com.mystore.testcases.LoginTest Initializing browser
+2025-07-19 17:14:47 [main] INFO com.mystore.testcases.LoginTest Initializing browser - Chrome
+2025-07-19 17:14:48 [main] INFO com.mystore.testcases.LoginTest Initialized browser with name - chrome
+2025-07-19 17:14:48 [main] INFO com.mystore.testcases.LoginTest window maximized
+2025-07-19 17:14:55 [main] INFO com.mystore.testcases.LoginTest Initializing completed
+2025-07-19 17:14:55 [main] INFO com.mystore.testcases.LoginTest **** Starting Login Test ****
+2025-07-19 17:14:55 [main] INFO com.mystore.pageobjects.IndexPage Trying to click on element - [[ChromeDriver: chrome on windows (9bf9ff16c7b3150f0790f8cbf4443fde)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-07-19 17:14:57 [main] INFO com.mystore.pageobjects.IndexPage Click on element - [[ChromeDriver: chrome on windows (9bf9ff16c7b3150f0790f8cbf4443fde)] -> xpath: //a[contains(text(),'Sign in')]]
+2025-07-19 17:14:57 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - cust1@xyz.com on element - [[ChromeDriver: chrome on windows (9bf9ff16c7b3150f0790f8cbf4443fde)] -> id: email]
+2025-07-19 17:14:57 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - cust1@xyz.com on element - [[ChromeDriver: chrome on windows (9bf9ff16c7b3150f0790f8cbf4443fde)] -> id: email]
+2025-07-19 17:14:57 [main] INFO com.mystore.pageobjects.LoginPage trying to sendkeys, with text - Password1 on element - [[ChromeDriver: chrome on windows (9bf9ff16c7b3150f0790f8cbf4443fde)] -> id: passwd]
+2025-07-19 17:14:57 [main] INFO com.mystore.pageobjects.LoginPage successfully performed sendkeys, with text - Password1 on element - [[ChromeDriver: chrome on windows (9bf9ff16c7b3150f0790f8cbf4443fde)] -> id: passwd]
+2025-07-19 17:14:57 [main] INFO com.mystore.pageobjects.LoginPage Trying to click on element - [[ChromeDriver: chrome on windows (9bf9ff16c7b3150f0790f8cbf4443fde)] -> id: SubmitLogin]
+2025-07-19 17:14:58 [main] INFO com.mystore.pageobjects.LoginPage Click on element - [[ChromeDriver: chrome on windows (9bf9ff16c7b3150f0790f8cbf4443fde)] -> id: SubmitLogin]
+2025-07-19 17:14:58 [main] INFO com.mystore.pageobjects.HomePage trying to getText on element - Proxy element for: DefaultElementLocator 'By.xpath: //a[@class='account']//span'
+2025-07-19 17:15:49 [main] INFO com.mystore.testcases.LoginTest Browser closed and driver removed

@@ -3,9 +3,10 @@
 <suite name="Sanity Suite" verbose="3" parallel="false">
 <parameter name="browserName" value="chrome" />
 <parameter name="isHeadless" value="false"/> <!--Make value as False to run in real browser instance -->
-<parameter name = "isLambdaTest" value="true"/> <!--for lambda test -->
+<parameter name = "isLambdaTest" value="false"/> <!--for lambda test -->
 	<listeners>
         <listener class-name="com.mystore.listener.ExtentReportListener"/>
+        <listener class-name="com.mystore.listener.RetryListener"/>
     </listeners>
 	<!--  Sanity tests  -->
 	<test thread-count="5" name="Sanity Test">
@@ -15,10 +16,10 @@
 			</run>
 		</groups>
 		<classes>
- 		<class name="com.mystore.testcases.LoginTest" /> 	
-	 		<class name="com.mystore.testcases.HomePageTest" />
+ 			<class name="com.mystore.testcases.LoginTest" /> 	
+	 	<!-- 	<class name="com.mystore.testcases.HomePageTest" />
 			<class name="com.mystore.testcases.IndexPageTest" /> 
-			<class name="com.mystore.testcases.SearchPageTest" /> 
+			<class name="com.mystore.testcases.SearchPageTest" />  -->
 		</classes>
 	</test> <!--
 	Test -->

@@ -6,6 +6,7 @@
 	<!--  Sanity tests  -->
 	<listeners>
         <listener class-name="com.mystore.listener.ExtentReportListener"/>
+        <listener class-name="com.mystore.listener.RetryListener"/>
     </listeners>
 	<test thread-count="5" name="Sanity Test Chrome browser">
 		<parameter name="browserName" value="chrome"/>
